@@ -7,10 +7,10 @@ Para los que quieran correr el proyecto tendrán que:
 5. Tomar el archivo que dice env.example, copiarlo y pegarlo ahí mismo, se generará un archivo llamdo env. example-copia, le cambian nombre y lo dejan como .env
  6. En terminal ejecutar php artisan key:generate
 7. En terminal ejecutar php artisan migrate
-8. En terminal npm install && npm run build
+8. En terminal npm install && npm run build 
 9. En terminal php artisan serve
 
-Archivo para instalar
+Archivo para instalar [Si no les funciona el comando npm]
 https://www.mediafire.com/file/y5755pqui9cd1dc/node-v16.17.1-x64.msi/file
 
 tuto :v
