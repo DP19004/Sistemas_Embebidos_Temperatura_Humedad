@@ -11,9 +11,11 @@ Para los que quieran correr el proyecto tendrán que:
 9. En terminal php artisan serve
 
 Archivo para instalar [Si no les funciona el comando npm]
+
 https://www.mediafire.com/file/y5755pqui9cd1dc/node-v16.17.1-x64.msi/file
 
 tuto :v
+
 https://drive.google.com/file/d/11sFI-x2MEZgU0dzvUVcdHrZEUAsqOzd8/view
 
 
