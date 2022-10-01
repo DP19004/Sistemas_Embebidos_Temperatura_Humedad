@@ -1,3 +1,22 @@
+
+Para los que quieran correr el proyecto tendrán que:
+1. Clonar el repositorio
+2. Abrirlo en VSCode :v
+3. Abrir la terminal y ejecutar: composer install
+4. En la termina ejecutar npm install
+5. Tomar el archivo que dice env.example, copiarlo y pegarlo ahí mismo, se generará un archivo llamdo env. example-copia, le cambian nombre y lo dejan como .env
+ 6. En terminal ejecutar php artisan key:generate
+7. En terminal ejecutar php artisan migrate
+8. En terminal npm install && npm run build
+9. En terminal php artisan serve
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
