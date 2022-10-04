@@ -4,11 +4,12 @@ Para los que quieran correr el proyecto tendrán que:
 2. Abrirlo en VSCode :v
 3. Abrir la terminal y ejecutar: composer install
 4. En la termina ejecutar npm install
-5. Tomar el archivo que dice env.example, copiarlo y pegarlo ahí mismo, se generará un archivo llamdo env. example-copia, le cambian nombre y lo dejan como .env
+5. Tomar el archivo que dice env.example, copiarlo y pegarlo ahí mismo, se generará un archivo llamado env. example-copia, le cambian nombre y lo dejan como .env
  6. En terminal ejecutar php artisan key:generate
 7. En terminal ejecutar php artisan migrate
-8. En terminal npm install && npm run build 
-9. En terminal php artisan serve
+8. En terminal npm install
+9. En terminal npm run build 
+10. En terminal php artisan serve
 
 Archivo para instalar [Si no les funciona el comando npm]
 
