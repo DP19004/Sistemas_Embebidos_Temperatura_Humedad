@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('humedades', function (Blueprint $table) {
-            $table->valor();
+            $table->id();
+            $table->double('valor', 2, 2);
         });
     }
 
