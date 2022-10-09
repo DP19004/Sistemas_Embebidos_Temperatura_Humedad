@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('kitSensores','Appp\Http\Controllers\KitSensoresController');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
