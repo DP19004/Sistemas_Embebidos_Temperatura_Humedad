@@ -2,7 +2,7 @@
 @section('title', 'Dashboard')
 @section('content')
 
-    <a href="Zonas/create" btn ="success"></a>
+    <a href="zona/create" btn ="success"></a>
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
     </style>
 
     <h1 style="color: black; font-family: georgia; text-align:center; background-color: #6095F0">Gestionar Zonas</h1>
-    <a class="btn btn-primary">Nuevo</a>
+    <a href="Zonas/create" class="btn btn-primary">Nuevo</a>
     
     <div class="mask d-flex align-items-center h-100">
       <div class="container">

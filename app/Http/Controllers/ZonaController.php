@@ -28,6 +28,7 @@ class ZonaController extends Controller
     public function create()
     {
         //
+        return view('Zonas.create');
     }
 
     /**
@@ -39,6 +40,16 @@ class ZonaController extends Controller
     public function store(Request $request)
     {
         //
+        $zonas = new Zona();
+        $zonas->id = $request->get('id');
+        $zonas->nombre = $request->get('nombre');
+        $zonas->latitud = $request->get('latitud');
+        $zonas->longitud = $request->get('longitud');
+        $zonas->periodoRegistro = $request->get('periodoRegistro');
+
+        $zonas->save();
+
+        return redirect('/zonas');
     }
 
     /**
