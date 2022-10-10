@@ -1,9 +1,14 @@
-@extends('layouts.plantillabase');
+@extends('adminlte::page')
 
-@section('contenido')
+@section('title', 'Dashboard')
+@section('content')
+
+
+
 <h2>Agregar alarma</h2>
 
 <!--tabla para registrar-->
+<div>
 <form action="/alarmas" method="POST">
     @csrf
     
@@ -52,4 +57,5 @@
     <a href="/alarmas" class="btn btn-secondary" tabindex="10">Cancelar</a>
     <button type="submit" class="btn btn-primary" tabindex="11">Guardar</button>
 </form>
+</div>
 @endsection

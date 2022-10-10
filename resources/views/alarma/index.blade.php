@@ -1,6 +1,9 @@
-@extends('layouts.plantillabase');
+@extends('adminlte::page')
+@section('title', 'Dashboard')
+@section('content')
 
-@section('contenido')
+<!---aca mi codigo-->
+
 <a href="alarmas/create" class="btn btn-primary">CREAR</a>
 
 <table class="table table-dark table-striped mt-4">
@@ -37,4 +40,5 @@
         @endforeach
     </tbody>
 </table>
+
 @endsection
