@@ -14,7 +14,7 @@
     <style>
            body
            {
-            margin: 20px;
+            margin: 0px;
            }
 
            table
@@ -43,7 +43,7 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-borderless mb-0">
-                    <thead>
+                    <thead class="thead-dark">
                       <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Temperatura Máxima</th>
