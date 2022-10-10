@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->id();
+            $table->date('fecha');
+            $table->time('hora');
             $table->timestamps();
         });
     }
