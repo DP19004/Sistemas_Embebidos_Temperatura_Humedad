@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class = "container">
-        <h4>Registrar nuevo cultivo</h4>
+        <h4 class="heading" style="text-align: center;">Registrar nuevo cultivo</h4>
         <br>
-        <div class ="row">
-            <div class="col-x1-12">
+        <div class ="d-flex align-items-center justify-content-center">
+            <div class="col-md-4 border">
                 <form action="{{route('')}}"method="post">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>

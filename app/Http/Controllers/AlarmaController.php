@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Alarma;
 
 class AlarmaController extends Controller
 {
@@ -13,7 +14,9 @@ class AlarmaController extends Controller
      */
     public function index()
     {
-        //
+        $alarmas = Alarma::all();
+
+        return view('alarma.index')->with('alarmas', $alarmas);
     }
 
     /**
@@ -23,7 +26,7 @@ class AlarmaController extends Controller
      */
     public function create()
     {
-        //
+        return view("alarma.create");
     }
 
     /**
@@ -34,7 +37,20 @@ class AlarmaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $alarmas = new Alarma();
+
+        $alarmas->nombre = $request->get('nombre');
+        $alarmas->temperaturaMax = $request->get('temperaturaMax');
+        $alarmas->temperaturaMin = $request->get('temperaturaMin');
+        $alarmas->humedadMax = $request->get('humedadMax');
+        $alarmas->humedadMin = $request->get('humedadMin');
+        $alarmas->importancia = $request->get('importancia');
+        $alarmas->status = $request->get('status');
+        $alarmas->recomendacion = $request->get('recomendacion');
+
+        $alarmas->save();
+
+        return redirect('/alarmas');
     }
 
     /**
