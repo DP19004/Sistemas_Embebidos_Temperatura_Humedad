@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('gestionarCultivo', function () {
+    return view('gestionarCultivo');
+});
 Route::resource('alarmas', 'App\Http\Controllers\AlarmaController');
 Route::resource('registros', 'App\Http\Controllers\RegistroController');
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

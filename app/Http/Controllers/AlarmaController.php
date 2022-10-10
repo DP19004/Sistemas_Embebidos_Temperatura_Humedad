@@ -15,7 +15,6 @@ class AlarmaController extends Controller
     public function index()
     {
         $alarmas = Alarma::all();
-
         return view('alarma.index')->with('alarmas', $alarmas);
     }
 
