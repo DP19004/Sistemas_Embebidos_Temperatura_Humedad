@@ -376,6 +376,11 @@ return [
             'icon_color' => 'black',
             'url'        => 'gestionarCultivo',
         ],
+        [
+            'text'       => 'Zonas',
+            'icon_color' => 'orange',
+            'url'        => 'Zonas',
+        ],
     ],
 
     /*
