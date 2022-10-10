@@ -6,7 +6,7 @@
 <div class="mx-auto" style="width:600px;">
 <br>
 <h2 class="display-5">Agregar Zona</h2>
-<form action="/kitSensores" method="POST">
+<form action="/Zonas" method="POST">
     @csrf    
     
     <div class="mb-3">
@@ -23,7 +23,7 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Periodo de registro</label>
-        <input id="periodoRegistro" name="periodoRegistro" type="number" step="any" value="0.00" class="form-control" tabindex="4" required>
+        <input id="periodoDeRegistro" name="periodoDeRegistro" type="number" step="any" value="0.00" class="form-control" tabindex="4" required>
     </div>
     
     <!--botones-->

@@ -13,7 +13,7 @@
     <style>
       table { text-align: center; }
     </style>
-
+    
     <h1 style="color: black; font-family: georgia; text-align:center; background-color: #6095F0">Gestionar Zonas</h1>
     <a href="Zonas/create" class="btn btn-primary">Nuevo</a>
     
@@ -37,10 +37,15 @@
                       <tbody>
                           @foreach ($zonas as $zona)
                           <tr>
-                              <td>{{$zona->Nombre}}</td>
-                              <td>{{$zona->Latitud}}</td>
-                              <td>{{$zona->Longitud}}</td>
-                              <td>{{$zona->Periodo}}</td>
+                              <td>{{$zona->nombre}}</td>
+                              <td>{{$zona->latitud}}</td>
+                              <td>{{$zona->longitud}}</td>
+                              <td>{{$zona->periodoDeRegistro}}</td>
+                              <td>
+                                <button class="btn btn-info">Editar</button>
+                                <button class="btn btn-success">Ver</button>
+                                <button class="btn btn-danger">Eliminar</button>
+                              </td>
                           </tr>
                           @endforeach
                         

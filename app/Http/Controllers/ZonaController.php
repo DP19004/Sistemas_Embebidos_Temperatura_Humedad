@@ -45,11 +45,10 @@ class ZonaController extends Controller
         $zonas->nombre = $request->get('nombre');
         $zonas->latitud = $request->get('latitud');
         $zonas->longitud = $request->get('longitud');
-        $zonas->periodoRegistro = $request->get('periodoRegistro');
+        $zonas->periodoDeRegistro = $request->get('periodoDeRegistro');
 
         $zonas->save();
-
-        return redirect('/zonas');
+        return redirect('/Zonas');
     }
 
     /**
