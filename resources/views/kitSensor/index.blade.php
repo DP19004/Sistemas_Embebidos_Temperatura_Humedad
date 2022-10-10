@@ -2,9 +2,6 @@
 @section('title', 'Dashboard')
 @section('content')
 
-@extends('layouts.plantillabase');
-
-@section('contenido')
 <div class="mx-auto" style="width:1300px;">
     <br>
     <h1 class="display-4 text-center">KitSensores</h1>

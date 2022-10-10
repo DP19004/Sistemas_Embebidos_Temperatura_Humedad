@@ -1,5 +1,6 @@
-@extends('layouts.plantillabase');
-@section('contenido')
+@extends('adminlte::page')
+@section('title', 'Dashboard')
+@section('content')
 
     <a href="Zonas/create" btn ="success">
     </a>

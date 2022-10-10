@@ -381,6 +381,11 @@ return [
             'icon_color' => 'orange',
             'url'        => 'Zonas',
         ],
+        [
+            'text'       => 'Kit Sensores',
+            'icon_color' => 'green',
+            'url'        => 'kitSensores',
+        ],
     ],
 
     /*
