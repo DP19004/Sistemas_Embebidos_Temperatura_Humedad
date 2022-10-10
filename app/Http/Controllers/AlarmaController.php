@@ -38,7 +38,7 @@ class AlarmaController extends Controller
     public function store(Request $request)
     {
         $alarmas = new Alarma();
-
+        $alarmas->id = $request->get('id');
         $alarmas->nombre = $request->get('nombre');
         $alarmas->temperaturaMax = $request->get('temperaturaMax');
         $alarmas->temperaturaMin = $request->get('temperaturaMin');
