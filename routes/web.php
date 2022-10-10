@@ -19,8 +19,11 @@ Route::get('/', function () {
 Route::get('gestionarCultivo', function () {
     return view('gestionarCultivo');
 });
+
+
 Route::resource('alarmas', 'App\Http\Controllers\AlarmaController');
 Route::resource('registros', 'App\Http\Controllers\RegistroController');
+Route::resource('Zonas','App\Http\Controllers\ZonaController');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

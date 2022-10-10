@@ -13,16 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('alarmas', function (Blueprint $table) {        
+        Schema::create('zonas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->double('temperaturaMax');
-            $table->double('temperaturaMin');
-            $table->double('humedadMax');
-            $table->double('humedadMin');
-            $table->string('importancia');
-            $table->boolean('status');
-            $table->string('recomendacion');
+            $table->String('nombre',100);
+            $table->double('latitud');
+            $table->double('longitud');
+            $table->double('perdiodo de Registro');
             $table->timestamps();
         });
     }
@@ -34,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alarmas');
+        Schema::dropIfExists('zonas');
     }
 };
