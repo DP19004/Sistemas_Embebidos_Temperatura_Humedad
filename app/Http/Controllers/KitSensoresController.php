@@ -36,7 +36,15 @@ class KitSensoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kitSensores = new KitSensores();
+        $kitSensores->id = $request->get('id');
+        $kitSensores->serialHumedad = $request->get('serialHumedad');
+        $kitSensores->serialTemperatura = $request->get('serialTemperatura');
+        $kitSensores->fechaColocacion = $request->get('fechaColocacion');
+
+        $kitSensores->save();
+
+       return redirect('/kitSensores');
     }
 
     /**

@@ -19,7 +19,7 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Fecha de Colocacion</label>
-        <input id="fechaColocacion" name="fechaColocacion" type="text"  class="form-control" tabindex="3" required>
+        <input id="fechaColocacion" name="fechaColocacion" type="date"  class="form-control" tabindex="3" required>
     </div>
     
     <!--botones-->
