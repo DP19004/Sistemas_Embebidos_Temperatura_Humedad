@@ -3,7 +3,7 @@
 @section('content')
 
 <!---aca mi codigo-->
-
+<br>
 <a href="alarmas/create" class="btn btn-primary">CREAR</a>
 
 <table class="table table-dark table-striped mt-4">
