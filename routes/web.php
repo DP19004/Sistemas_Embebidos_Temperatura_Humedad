@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::get('gestionarCultivo', function () {
     return view('gestionarCultivo');
 });
+
+
 Route::resource('alarmas', 'App\Http\Controllers\AlarmaController');
 <<<<<<< Updated upstream
 Route::resource('registros', 'App\Http\Controllers\RegistroController');
