@@ -22,13 +22,8 @@ Route::get('gestionarCultivo', function () {
 
 
 Route::resource('alarmas', 'App\Http\Controllers\AlarmaController');
-<<<<<<< Updated upstream
 Route::resource('registros', 'App\Http\Controllers\RegistroController');
-=======
-
 Route::resource('Zonas','App\Http\Controllers\ZonaController');
-
->>>>>>> Stashed changes
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
