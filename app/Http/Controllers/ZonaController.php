@@ -15,7 +15,9 @@ class ZonaController extends Controller
      */
     public function index()
     {
-        return view('Zonas.indexZonas');
+        $zonas = Zona::all();
+
+        return view('Zonas.indexZonas')->with('zonas',$zonas);
     }
 
     /**
