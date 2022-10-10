@@ -18,7 +18,7 @@ return new class extends Migration
             $table->String('nombre',100);
             $table->double('latitud');
             $table->double('longitud');
-            $table->double('PerdiodoDeRegistro');
+            $table->double('PeriodoDeRegistro');
             $table->timestamps();
         });
     }
