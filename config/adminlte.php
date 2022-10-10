@@ -381,7 +381,7 @@ return [
         [
             'text'       => 'Alarmas',
             'icon_color' => 'cyan',
-            'url'        => 'alarmas/index',
+            'url'        => 'alarmas',
         ],
         [
             'text'       => 'Gestionar cultivo',
