@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\KitSensores;
 
 class KitSensoresController extends Controller
 {
@@ -13,7 +14,8 @@ class KitSensoresController extends Controller
      */
     public function index()
     {
-        //
+        $kitSensores = KitSensores::all();
+        return view('kitSensor.index')->with('kitSensores', $kitSensores);
     }
 
     /**
@@ -23,7 +25,7 @@ class KitSensoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('kitSensor.create');
     }
 
     /**
