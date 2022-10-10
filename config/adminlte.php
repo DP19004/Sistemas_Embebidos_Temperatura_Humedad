@@ -369,19 +369,14 @@ return [
         ],
         ['header' => 'labels'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
             'text'       => 'Alarmas',
             'icon_color' => 'cyan',
             'url'        => 'alarmas',
+        ],
+        [
+            'text'       => 'Registrar cultivo',
+            'icon_color' => 'yellow',
+            'url'        => '#',
         ],
         [
             'text'       => 'Gestionar cultivo',
