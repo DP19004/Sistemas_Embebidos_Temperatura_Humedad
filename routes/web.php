@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::resource('alarmas', 'App\Http\Controllers\AlarmaController');
+Route::resource('registros', 'App\Http\Controllers\RegistroController');
 
 Route::middleware([
     'auth:sanctum',
