@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('alarmas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('alarmas', function (Blueprint $table) {        
+                
             $table->string('nombre');
             $table->double('temperaturaMax');
             $table->double('temperaturaMin');
