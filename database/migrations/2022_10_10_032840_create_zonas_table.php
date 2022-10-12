@@ -19,7 +19,9 @@ return new class extends Migration
             $table->double('latitud');
             $table->double('longitud');
             $table->double('periodoDeRegistro');
+            
             $table->timestamps();
+            $table->foreignId("id_Kit")->constrained("kit_sensores")->nullOnDelete();
         });
     }
 

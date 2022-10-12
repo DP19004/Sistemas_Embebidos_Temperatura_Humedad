@@ -31,6 +31,7 @@
                           <th scope="col">Latitud</th>
                           <th scope="col">Longitud</th>
                           <th scope="col">Periodo de registro</th>
+                          <th scope="col">Kit de Sensores</th>
                           <th scope="col">Acciones</th>
                         </tr>
                       </thead>
@@ -41,6 +42,7 @@
                               <td>{{$zona->latitud}}</td>
                               <td>{{$zona->longitud}}</td>
                               <td>{{$zona->periodoDeRegistro}}</td>
+                              <td>{{$zona->id_kits}}</td>
                               <td>
                                 <button class="btn btn-info">Editar</button>
                                 <button class="btn btn-success">Ver</button>

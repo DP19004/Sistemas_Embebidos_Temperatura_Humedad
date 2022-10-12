@@ -25,7 +25,15 @@
         <label for="" class="form-label">Periodo de registro</label>
         <input id="periodoDeRegistro" name="periodoDeRegistro" type="number" step="any" value="0.00" class="form-control" tabindex="4" required>
     </div>
-    
+    <div class="mb-3">
+        <label for="" class="form-label">kit de sensores</label><br>
+        <select class="form-control" aria-label="Default select example" id="id_Kit" name='kits de sensores' tabindex="5" required>
+            <option selected></option>
+            @foreach ($kits as $item)
+            <option value= {{$item->id}}>{{$item->id}}</option>
+            @endforeach
+        </select>
+    </div>
     <!--botones-->
     <a href="/Zonas" class="btn btn-secondary" tabindex="8">Cancelar</a>
     <button type="submit" class="btn btn-primary" tabindex="9">Guardar</button>
