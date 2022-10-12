@@ -34,13 +34,14 @@
         <input id="humedadMin" name="humedadMin" type="number" step="any" value="0.00" class="form-control" tabindex="5" required>
     </div>
 
+
     <div class="mb-3">
         <label for="" class="form-label">Importancia</label><br>
         <select class="form-control" aria-label="Default select example" id="importancia" name='importancia' tabindex="6" required>
             <option selected></option>
-            <option value="Baja">Baja</option>
-            <option value="Media">Media</option>
             <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
         </select>
     </div>
 

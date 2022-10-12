@@ -13,12 +13,12 @@
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Temperatura Máxima</th>
-                <th scope="col">Temperatura Mínima</th>
-                <th scope="col">Humedad Máxima</th>
-                <th scope="col">Humedad Mínima</th>
+                <th scope="col">TempMáx</th>
+                <th scope="col">TempMín</th>
+                <th scope="col">HumMáx</th>
+                <th scope="col">HumMín</th>
                 <th scope="col">Importancia</th>
-                <th scope="col">Recomendación</th>
+                <th scope="col">Recom</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
