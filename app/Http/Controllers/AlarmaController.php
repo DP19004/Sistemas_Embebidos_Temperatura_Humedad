@@ -44,7 +44,7 @@ class AlarmaController extends Controller
         $alarmas->humedadMax = $request->get('humedadMax');
         $alarmas->humedadMin = $request->get('humedadMin');
         $alarmas->importancia = $request->get('importancia');
-        $alarmas->status = $request->get('status');
+        $alarmas->status = false;
         $alarmas->recomendacion = $request->get('recomendacion');
 
         $alarmas->save();
