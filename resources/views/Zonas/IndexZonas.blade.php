@@ -42,7 +42,7 @@
                               <td>{{$zona->latitud}}</td>
                               <td>{{$zona->longitud}}</td>
                               <td>{{$zona->periodoDeRegistro}}</td>
-                              <td>{{$zona->id_kits}}</td>
+                              <td>{{$zona->id_Kit}}</td>
                               <td>
                                 <button class="btn btn-info">Editar</button>
                                 <button class="btn btn-success">Ver</button>

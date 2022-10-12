@@ -27,10 +27,10 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">kit de sensores</label><br>
-        <select class="form-control" aria-label="Default select example" id="id_Kit" name='kits de sensores' tabindex="5" required>
+        <select class="form-control" aria-label="Default select example" id="id_Kit" name='id_Kit' tabindex="5" required>
             <option selected></option>
             @foreach ($kits as $item)
-            <option value= {{$item->id}}>{{$item->id}}</option>
+            <option value="{{$item->id}}">{{$item->id}}</option>
             @endforeach
         </select>
     </div>

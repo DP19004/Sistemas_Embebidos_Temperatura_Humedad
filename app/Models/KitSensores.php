@@ -10,7 +10,7 @@ class KitSensores extends Model
 {
     use HasFactory;
     public function Zonas(){
-        return $this->hasOne(Zona::class,'id');
+        return $this->belongsTo(Zona::class,'id');
 
     }
 }
