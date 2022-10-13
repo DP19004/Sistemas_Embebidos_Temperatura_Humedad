@@ -66,7 +66,8 @@ class KitSensoresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kitSensor = KitSensores::find($id);
+        return view('kitSensor.edit')->with('kitSensor',$kitSensor);
     }
 
     /**
@@ -78,7 +79,17 @@ class KitSensoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $kitSensor = KitSensores::find($id);
+
+        
+        $kitSensor->serialHumedad = $request->get('serialHumedad');
+        $kitSensor->serialTemperatura = $request->get('serialTemperatura');
+        $kitSensor->fechaColocacion = $request->get('fechaColocacion');
+
+        $kitSensor->save();
+
+       return redirect('/kitSensores');
     }
 
     /**
@@ -89,6 +100,8 @@ class KitSensoresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kitSensor = KitSensores::find($id);
+        $kitSensor->delete();
+        return redirect('/kitSensores');
     }
 }
