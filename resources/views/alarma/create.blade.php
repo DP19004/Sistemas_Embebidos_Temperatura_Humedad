@@ -10,8 +10,8 @@
 <form action="/alarmas" method="POST">
     @csrf    
     <div class="mb-3">
-        <label for="" class="form-label">Nombre</label>
-        <input id="nombre" name="nombre" type="text" class="form-control" tabindex="1" required>
+        <label for="" class="form-label" >Nombre</label>
+        <input id="nombre" name="nombre" type="text" class="form-control" tabindex="1" required data-toggle="tooltip" data-placement="top" title="Clic para agregar una nueva alarma">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Temperatura Máxima</label>
