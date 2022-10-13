@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Zona;
 use App\Models\KitSensores;
+use App\Models\Alarma;
 
 class ZonaController extends Controller
 {
@@ -29,8 +30,9 @@ class ZonaController extends Controller
     public function create()
     {
         $kits = KitSensores::all();
+        $alarmas =Alarma::all();
         //
-        return view('Zonas.create')->with('kits',$kits);
+        return view('Zonas.create')->with('kits',$kits)->with('alarmas',$alarmas);
     }
 
     /**
@@ -49,6 +51,8 @@ class ZonaController extends Controller
         $zonas->longitud = $request->get('longitud');
         $zonas->periodoDeRegistro = $request->get('periodoDeRegistro');
         $zonas->id_Kit = $request->get('id_Kit');
+        $zonas->id_Alarma = $request->get('id_Alarma');
+
 
         $zonas->save();
         return redirect('/Zonas');

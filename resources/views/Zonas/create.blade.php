@@ -34,6 +34,15 @@
             @endforeach
         </select>
     </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Alarmas programables</label><br>
+        <select class="form-control" aria-label="Default select example" id="id_Alarma" name='id_Alarma' tabindex="6" required>
+            <option selected></option>
+            @foreach ($alarmas as $a)
+            <option value="{{$a->id}}">{{$a->nombre}}</option>
+            @endforeach
+        </select>
+    </div>
     <!--botones-->
     <a href="/Zonas" class="btn btn-secondary" tabindex="8">Cancelar</a>
     <button type="submit" class="btn btn-primary" tabindex="9">Guardar</button>

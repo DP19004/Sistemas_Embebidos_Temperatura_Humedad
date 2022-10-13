@@ -23,6 +23,7 @@ Route::get('gestionarCultivo', function () {
 Route::resource('kitSensores','App\Http\Controllers\KitSensoresController');
 Route::resource('alarmas', 'App\Http\Controllers\AlarmaController');
 Route::resource('registros', 'App\Http\Controllers\RegistroController');
+
 Route::resource('Zonas','App\Http\Controllers\ZonaController');
 Route::middleware([
     'auth:sanctum',

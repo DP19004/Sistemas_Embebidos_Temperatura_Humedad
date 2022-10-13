@@ -21,20 +21,22 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
-            <div class="card shadow-2-strong" style="background-color: #f5f7fa; margin-top: 20px;">
+            <div class="card shadow-2-strong" style="background-color: #ffffff; margin-top: 20px;">
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-borderless mb-0">
-                      <thead class="thead-dark">
+                  <table class="table table-dark table-striped mt-4">
+                     
                         <tr>
                           <th scope="col">Nombre</th>
                           <th scope="col">Latitud</th>
                           <th scope="col">Longitud</th>
                           <th scope="col">Periodo de registro</th>
                           <th scope="col">Kit de Sensores</th>
+                          <th scope="col">Alarmas</th>
+                          <th scope="col">cultivos</th>
                           <th scope="col">Acciones</th>
                         </tr>
-                      </thead>
+                     
                       <tbody>
                           @foreach ($zonas as $zona)
                           <tr>
@@ -43,9 +45,10 @@
                               <td>{{$zona->longitud}}</td>
                               <td>{{$zona->periodoDeRegistro}}</td>
                               <td>{{$zona->id_Kit}}</td>
+                              <td>{{$zona->id_Alarma}}</td>
+                              <td>pendiente</td>
                               <td>
                                 <button class="btn btn-info">Editar</button>
-                                <button class="btn btn-success">Ver</button>
                                 <button class="btn btn-danger">Eliminar</button>
                               </td>
                           </tr>

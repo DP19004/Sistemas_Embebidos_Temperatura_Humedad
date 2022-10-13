@@ -20,7 +20,10 @@ return new class extends Migration
             $table->double('longitud');
             $table->double('periodoDeRegistro');
             $table->timestamps();
-            $table->foreignId("id_Kit")->constrained("kit_sensores");
+            $table->foreignId('id_Kit')->constrained('kit_sensores');
+            $table->foreignId('id_Alarma')->constrained('alarmas');
+            //$table->foreignId("id_Cultivo")->constrained("cultivos");
+
         });
     }
 
