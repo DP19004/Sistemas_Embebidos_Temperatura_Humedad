@@ -1,11 +1,7 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Alarma | Agregar')
 @section('content')
-
-
-
-
 
 <!--tabla para registrar-->
 <div class="mx-auto" style="width:600px;">
@@ -34,7 +30,6 @@
         <input id="humedadMin" name="humedadMin" type="number" step="any" value="0.00" class="form-control" tabindex="5" required>
     </div>
 
-
     <div class="mb-3">
         <label for="" class="form-label">Importancia</label><br>
         <select class="form-control" aria-label="Default select example" id="importancia" name='importancia' tabindex="6" required>
@@ -52,6 +47,8 @@
     </div>
     <!--botones-->
     <a href="/alarmas" class="btn btn-secondary" tabindex="8">Cancelar</a>
+    
+    
     <button type="submit" class="btn btn-primary" tabindex="9">Guardar</button>
 </form>
 </div>
