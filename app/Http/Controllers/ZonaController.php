@@ -43,6 +43,14 @@ class ZonaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'Nombre'=> ['required'],
+            'Latitud'=> ['required'],
+            'Longitud'=> ['required'],
+            'PriodoDeRegistro'=> ['required'],
+            'Id_Kit'=> ['required'],
+            'Id_Alarma'=> ['required']
+        ]);
         //
         $zonas = new Zona();
         $zonas->id = $request->get('id');
