@@ -10,16 +10,16 @@
     @csrf    
     
     <div class="mb-3">
-        <label for="" class="form-label">Humedad</label>
-        <input id="serialHumedad" name="serialHumedad" type="number" step="any" value="0.00" class="form-control" tabindex="1" required>
+        <label for="" class="form-label">Serial de Humedad</label>
+        <input id="serialHumedad" name="serialHumedad" type="text" class="form-control" tabindex="1" required="" pattern="[0-9]+" >
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Temperatura</label>
-        <input id="serialTemperatura" name="serialTemperatura" type="number" step="any" value="0.00" class="form-control" tabindex="2" required>
+        <label for="" class="form-label">Serial de Temperatura</label>
+        <input id="serialTemperatura" name="serialTemperatura" type="text"   class="form-control" tabindex="2" required="" >
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Fecha de Colocacion</label>
-        <input id="fechaColocacion" name="fechaColocacion" type="date"  class="form-control" tabindex="3" required>
+        <input id="fechaColocacion" name="fechaColocacion" type="date"  class="form-control" tabindex="3" required >
     </div>
     
     <!--botones-->
