@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Zonas | Registrar')
+@section('title', 'Dashboard')
 @section('content')
 
 <div class="mx-auto" style="width:600px;">
@@ -29,6 +29,7 @@
         <label for="" class="form-label">Longitud</label>
         <input id="longitud" name="Longitud" type="number" step="any" value="{{old('Longitud')}}" class="form-control" tabindex="3" >
         @error('Longitud')
+
             <br>
             <small style="color:crimson">{{$message}}</small>
         @enderror
@@ -61,7 +62,7 @@
             @foreach ($alarmas as $a)
             <option value="{{$a->id}}">{{$a->nombre}}</option>
             @endforeach
-        </select>
+        </select> 
         @error('Id_Alarma')
             <br>
             <small style="color:crimson">{{$message}}</small>

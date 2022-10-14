@@ -20,6 +20,7 @@ class Zona extends Model
         return $this->hasMany(Alarma::class,'id_Alarma');
         
     }
+
     /*
     public function cultivos(){
 

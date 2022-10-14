@@ -33,6 +33,7 @@ class ZonaController extends Controller
         $alarmas =Alarma::all();
         //
         return view('Zonas.create')->with('kits',$kits)->with('alarmas',$alarmas);
+        
     }
 
     /**
