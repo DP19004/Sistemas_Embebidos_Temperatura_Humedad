@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'Dashboard')
+@section('title', 'Zonas')
 @section('content')
 
     <a href="zona/create" btn ="success"></a>

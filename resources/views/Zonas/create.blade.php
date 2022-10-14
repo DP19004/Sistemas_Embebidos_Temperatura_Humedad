@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Zonas | Registrar')
 @section('content')
 
 <div class="mx-auto" style="width:600px;">

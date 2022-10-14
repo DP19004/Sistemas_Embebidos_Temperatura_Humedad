@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('gestionarCultivo', function () {
-    return view('gestionarCultivo');
+    return view('Cultivo\gestionarCultivo');
 });
 
 Route::resource('kitSensores','App\Http\Controllers\KitSensoresController');

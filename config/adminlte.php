@@ -362,18 +362,14 @@ return [
         ],
         ['header' => 'Opciones'],
         [
-            'text'       => 'Alarmas',
+            'text'       => 'Gestionar Alarmas',
             'icon_color' => 'cyan',
             'url'        => 'alarmas',
         ],
+        
         [
-            'text'       => 'Registrar cultivo',
+            'text'       => 'Gestionar Cultivo',
             'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'Gestionar cultivo',
-            'icon_color' => 'black',
             'url'        => 'gestionarCultivo',
         ],
         [
