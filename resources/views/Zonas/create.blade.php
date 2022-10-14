@@ -44,10 +44,14 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">kit de sensores</label><br>
-        <select class="form-control" aria-label="Default select example" id="id_Kit" name='Id_Kit'value="{{old('Id_Kit')}}" tabindex="5" >
+        <select class="form-control" aria-label="Default select example" id="id_Kit" name='Id_Kit' value= "{{old('Id_Kit')}}" tabindex="5" >
             <option selected></option>
             @foreach ($kits as $item)
-            <option value="{{$item->id}}">{{$item->id}}</option>
+                @foreach($zonas as $z)
+                    @if ($item->id != $z->id_Kit)
+                        <option value="{{$item->id}}">{{$item->id}}</option>
+                    @endif
+                @endforeach
             @endforeach
         </select>
         @error('Id_Kit')

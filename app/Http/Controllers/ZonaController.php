@@ -29,10 +29,11 @@ class ZonaController extends Controller
      */
     public function create()
     {
+        $zonas = Zona::all();
         $kits = KitSensores::all();
         $alarmas =Alarma::all();
         //
-        return view('Zonas.create')->with('kits',$kits)->with('alarmas',$alarmas);
+        return view('Zonas.create')->with('kits',$kits)->with('alarmas',$alarmas)->with('zonas',$zonas);
         
     }
 
