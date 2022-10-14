@@ -43,15 +43,23 @@ class ZonaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'Nombre'=> ['required'],
+            'Latitud'=> ['required'],
+            'Longitud'=> ['required'],
+            'PeriodoDeRegistro'=> ['required'],
+            'Id_Kit'=> ['required'],
+            'Id_Alarma'=> ['required']
+        ]);
         //
         $zonas = new Zona();
         $zonas->id = $request->get('id');
-        $zonas->nombre = $request->get('nombre');
-        $zonas->latitud = $request->get('latitud');
-        $zonas->longitud = $request->get('longitud');
-        $zonas->periodoDeRegistro = $request->get('periodoDeRegistro');
-        $zonas->id_Kit = $request->get('id_Kit');
-        $zonas->id_Alarma = $request->get('id_Alarma');
+        $zonas->nombre = $request->get('Nombre');
+        $zonas->latitud = $request->get('Latitud');
+        $zonas->longitud = $request->get('Longitud');
+        $zonas->periodoDeRegistro = $request->get('PeriodoDeRegistro');
+        $zonas->id_Kit = $request->get('Id_Kit');
+        $zonas->id_Alarma = $request->get('Id_Alarma');
 
 
         $zonas->save();
