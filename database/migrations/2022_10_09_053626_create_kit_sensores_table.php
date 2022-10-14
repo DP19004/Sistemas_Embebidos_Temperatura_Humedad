@@ -13,16 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('alarmas', function (Blueprint $table) {        
+        Schema::create('kit_sensores', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->double('temperaturaMax');
-            $table->double('temperaturaMin');
-            $table->double('humedadMax');
-            $table->double('humedadMin');
-            $table->string('importancia');
-            $table->boolean('status');
-            $table->string('recomendacion');
+            $table->Integer('serialHumedad');
+            $table->Integer('serialTemperatura');
+            $table->date('fechaColocacion');
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alarmas');
+        Schema::dropIfExists('kit_sensores');
     }
 };

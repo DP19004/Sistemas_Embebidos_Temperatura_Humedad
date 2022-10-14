@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Zona;
+use App\Models\KitSensores;
 use App\Models\Alarma;
 
-class AlarmaController extends Controller
+class ZonaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,10 @@ class AlarmaController extends Controller
      */
     public function index()
     {
-        $alarmas = Alarma::all();
-        return view('alarma.index')->with('alarmas', $alarmas);
+        $zonas = Zona::all();
+
+
+        return view('Zonas.indexZonas')->with('zonas',$zonas);
     }
 
     /**
@@ -25,7 +29,10 @@ class AlarmaController extends Controller
      */
     public function create()
     {
-        return view("alarma.create");
+        $kits = KitSensores::all();
+        $alarmas =Alarma::all();
+        //
+        return view('Zonas.create')->with('kits',$kits)->with('alarmas',$alarmas);
     }
 
     /**
@@ -36,20 +43,27 @@ class AlarmaController extends Controller
      */
     public function store(Request $request)
     {
-        $alarmas = new Alarma();
-        $alarmas->id = $request->get('id');
-        $alarmas->nombre = $request->get('nombre');
-        $alarmas->temperaturaMax = $request->get('temperaturaMax');
-        $alarmas->temperaturaMin = $request->get('temperaturaMin');
-        $alarmas->humedadMax = $request->get('humedadMax');
-        $alarmas->humedadMin = $request->get('humedadMin');
-        $alarmas->importancia = $request->get('importancia');
-        $alarmas->status = false;
-        $alarmas->recomendacion = $request->get('recomendacion');
+        $request->validate([
+            'Nombre'=> ['required'],
+            'Latitud'=> ['required'],
+            'Longitud'=> ['required'],
+            'PeriodoDeRegistro'=> ['required'],
+            'Id_Kit'=> ['required'],
+            'Id_Alarma'=> ['required']
+        ]);
+        //
+        $zonas = new Zona();
+        $zonas->id = $request->get('id');
+        $zonas->nombre = $request->get('Nombre');
+        $zonas->latitud = $request->get('Latitud');
+        $zonas->longitud = $request->get('Longitud');
+        $zonas->periodoDeRegistro = $request->get('PeriodoDeRegistro');
+        $zonas->id_Kit = $request->get('Id_Kit');
+        $zonas->id_Alarma = $request->get('Id_Alarma');
 
-        $alarmas->save();
 
-        return redirect('/alarmas');
+        $zonas->save();
+        return redirect('/Zonas');
     }
 
     /**

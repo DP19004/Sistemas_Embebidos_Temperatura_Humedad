@@ -1,40 +1,59 @@
-@extends('layouts.plantillabase');
+@extends('adminlte::page')
+@section('title', 'Gestionar | Alarmas')
+@section('content')
 
-@section('contenido')
-<a href="alarmas/create" class="btn btn-primary">CREAR</a>
+<!---aca mi codigo-->
 
-<table class="table table-dark table-striped mt-4">
-    <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Temperatura Maxima</th>
-            <th scope="col">Temperatura Maxima</th>
-            <th scope="col">Humedad Maxima</th>
-            <th scope="col">Humedad Minima</th>
-            <th scope="col">Importancia</th>
-            <th scope="col">Status</th>
-            <th scope="col">Recomendacion</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($alarmas as $alarma)
-        <tr>
-            <td>{{$alarma-nombre}}</td>
-            <td>{{$alarma-temperaturaMax}}</td>
-            <td>{{$alarma-temperaturaMin}}</td>
-            <td>{{$alarma-humedadMax}}</td>
-            <td>{{$alarma-humedadMin}}</td>
-            <td>{{$alarma-importancia}}</td>
-            <td>{{$alarma-status}}</td>
-            <td>{{$alarma-recomendacion}}</td>
-            <td>
-                <a class="btn btn-info">Editar</a>
-                <button class="btn btn-danger"></button>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+<br>
+<h1 class="display-4 text-center">Alarma</h1>
+
+<div class="p-5">
+    <br>
+    <span class="tt" data-bs-placement="bottom" title="Agrega una nueva alarma">
+        <a href="alarmas/create" class="btn btn-primary">CREAR</a>
+    </span>
+
+    <br> <br>
+    <div class="table-responsive">
+
+        <table class="table table-striped table-dark ">
+            <thead>
+                <tr class="bg-title">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">TempMáx</th>
+                    <th scope="col">TempMín</th>
+                    <th scope="col">HumMáx</th>
+                    <th scope="col">HumMín</th>
+                    <th scope="col">Importancia</th>
+                    <th scope="col">Recom</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($alarmas as $alarma)
+                <tr>
+                    <td>{{$alarma->nombre}}</td>
+                    <td>{{$alarma->temperaturaMax}}</td>
+                    <td>{{$alarma->temperaturaMin}}</td>
+                    <td>{{$alarma->humedadMax}}</td>
+                    <td>{{$alarma->humedadMin}}</td>
+                    <td>{{$alarma->importancia}}</td>
+                    <td>{{$alarma->recomendacion}}</td>
+                    <td>
+                        <a class="btn btn-info" ata-toggle="tooltip" data-placement="top" title="Edita la alarma"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                            </svg></a>
+                        <button class="btn btn-danger" ata-toggle="tooltip" data-placement="top" title="Elimina la alarma">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg></button>
+                    </td>
+                </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+    </div>
+</div>
 @endsection

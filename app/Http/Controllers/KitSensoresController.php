@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Alarma;
+use App\Models\KitSensores;
 
-class AlarmaController extends Controller
+class KitSensoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class AlarmaController extends Controller
      */
     public function index()
     {
-        $alarmas = Alarma::all();
-        return view('alarma.index')->with('alarmas', $alarmas);
+        $kitSensores = KitSensores::all();
+        return view('kitSensor.index')->with('kitSensores', $kitSensores);
     }
 
     /**
@@ -25,7 +25,7 @@ class AlarmaController extends Controller
      */
     public function create()
     {
-        return view("alarma.create");
+        return view('kitSensor.create');
     }
 
     /**
@@ -36,20 +36,15 @@ class AlarmaController extends Controller
      */
     public function store(Request $request)
     {
-        $alarmas = new Alarma();
-        $alarmas->id = $request->get('id');
-        $alarmas->nombre = $request->get('nombre');
-        $alarmas->temperaturaMax = $request->get('temperaturaMax');
-        $alarmas->temperaturaMin = $request->get('temperaturaMin');
-        $alarmas->humedadMax = $request->get('humedadMax');
-        $alarmas->humedadMin = $request->get('humedadMin');
-        $alarmas->importancia = $request->get('importancia');
-        $alarmas->status = false;
-        $alarmas->recomendacion = $request->get('recomendacion');
+        $kitSensores = new KitSensores();
+        $kitSensores->id = $request->get('id');
+        $kitSensores->serialHumedad = $request->get('serialHumedad');
+        $kitSensores->serialTemperatura = $request->get('serialTemperatura');
+        $kitSensores->fechaColocacion = $request->get('fechaColocacion');
 
-        $alarmas->save();
+        $kitSensores->save();
 
-        return redirect('/alarmas');
+       return redirect('/kitSensores');
     }
 
     /**
@@ -71,7 +66,8 @@ class AlarmaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kitSensor = KitSensores::find($id);
+        return view('kitSensor.edit')->with('kitSensor',$kitSensor);
     }
 
     /**
@@ -83,7 +79,17 @@ class AlarmaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $kitSensor = KitSensores::find($id);
+
+        
+        $kitSensor->serialHumedad = $request->get('serialHumedad');
+        $kitSensor->serialTemperatura = $request->get('serialTemperatura');
+        $kitSensor->fechaColocacion = $request->get('fechaColocacion');
+
+        $kitSensor->save();
+
+       return redirect('/kitSensores');
     }
 
     /**
@@ -94,6 +100,8 @@ class AlarmaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kitSensor = KitSensores::find($id);
+        $kitSensor->delete();
+        return redirect('/kitSensores');
     }
 }

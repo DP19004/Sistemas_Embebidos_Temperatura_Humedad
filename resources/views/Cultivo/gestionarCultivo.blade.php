@@ -1,3 +1,7 @@
+@extends('adminlte::page')
+
+@section('title','Cultivo')
+@section('content')
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,7 +14,7 @@
     <style>
            body
            {
-            margin: 20px;
+            margin: 0px;
            }
 
            table
@@ -39,7 +43,7 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-borderless mb-0">
-                    <thead>
+                    <thead class="thead-dark">
                       <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Temperatura Máxima</th>
@@ -101,3 +105,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
+@endsection
