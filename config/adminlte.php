@@ -382,7 +382,7 @@ return [
             'url'        => 'Zonas',
         ],
         [
-            'text'       => 'Kit Sensores',
+            'text'       => 'Gestionar Kit de Sensores',
             'icon_color' => 'green',
             'url'        => 'kitSensores',
         ],
