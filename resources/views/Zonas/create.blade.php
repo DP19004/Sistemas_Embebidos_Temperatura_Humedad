@@ -46,13 +46,9 @@
         <label for="" class="form-label">kit de sensores</label><br>
         <select class="form-control" aria-label="Default select example" id="id_Kit" name='Id_Kit' value= "{{old('Id_Kit')}}" tabindex="5" >
             <option selected></option>
-            @foreach ($kits as $item)
-                @foreach($zonas as $z)
-                    @if ($item->id != $z->id_Kit)
-                        <option value="{{$item->id}}">{{$item->id}}</option>
-                    @endif
+                @foreach ($arr as $item)
+                <option value="{{$item}}">{{$item}}</option>
                 @endforeach
-            @endforeach
         </select>
         @error('Id_Kit')
             <br>

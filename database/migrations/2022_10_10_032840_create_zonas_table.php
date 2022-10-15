@@ -20,8 +20,12 @@ return new class extends Migration
             $table->double('longitud');
             $table->double('periodoDeRegistro');
             $table->timestamps();
-            $table->foreignId('id_Kit')->constrained('kit_sensores');
-            $table->foreignId('id_Alarma')->constrained('alarmas');
+            $table->unsignedBigInteger('id_Kit')->unique();
+            $table->foreign('id_Kit')->references('id')
+            ->on('kit_sensores')
+            ->nullOnDelete()
+            ->cascadeOnUpdate();
+            $table->foreignId('id_Alarma')->constrained('alarmas')->nullOnDelete()->cascadeOnUpdate();
             //$table->foreignId("id_Cultivo")->constrained("cultivos");
 
         });

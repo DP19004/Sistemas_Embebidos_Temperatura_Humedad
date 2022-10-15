@@ -31,9 +31,24 @@ class ZonaController extends Controller
     {
         $zonas = Zona::all();
         $kits = KitSensores::all();
-        $alarmas =Alarma::all();
+        $alarmas = Alarma::all();
+
+        
+        $i = 0;
+        $arr = array();
+        foreach($kits as $kit){
+            foreach($zonas as $zona){
+                if($kit->id!=$zona->id_Kit){
+                    $arr[$i] = $kit->id;
+                }
+                else{break;}
+            }
+            
+            $i= $i+1;
+        }
+        
         //
-        return view('Zonas.create')->with('kits',$kits)->with('alarmas',$alarmas)->with('zonas',$zonas);
+        return view('Zonas.create')->with('alarmas',$alarmas)->with('arr',$arr)->with('zonas',$zonas);
         
     }
 
@@ -62,8 +77,6 @@ class ZonaController extends Controller
         $zonas->periodoDeRegistro = $request->get('PeriodoDeRegistro');
         $zonas->id_Kit = $request->get('Id_Kit');
         $zonas->id_Alarma = $request->get('Id_Alarma');
-
-
         $zonas->save();
         return redirect('/Zonas');
     }
