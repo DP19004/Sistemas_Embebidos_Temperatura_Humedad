@@ -25,7 +25,7 @@ class CultivoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Cultivo.registrarCultivo');
     }
 
     /**

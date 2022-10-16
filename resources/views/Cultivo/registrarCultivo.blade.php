@@ -18,7 +18,7 @@
         <br>
         <div class ="d-flex align-items-center justify-content-center">
             <div class="col-md-4 border">
-                <form action="{{route('')}}"method="POST">
+                <form action="/cultivos"method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Registrar">
-                        <input type="reset" class="btn btn-secondary" value="Cancelar">
+                        <a href="/cultivos" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form>
             </div>
