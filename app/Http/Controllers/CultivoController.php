@@ -36,7 +36,17 @@ class CultivoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cultivos = new Cultivo();
+
+        $cultivos->nombre = $request->get('nombre');
+        $cultivos->TemperaturaMaxima = $request->get('temperaturaMax');
+        $cultivos->TemperaturaMinima = $request->get('temperaturaMin');
+        $cultivos->HumedadMaxima = $request->get('humedadMax');
+        $cultivos->HumedadMinima = $request->get('humedadMin');
+
+        $cultivos->save();
+
+        return redirect('/cultivos');
     }
 
     /**
