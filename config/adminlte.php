@@ -370,7 +370,7 @@ return [
         [
             'text'       => 'Gestionar Cultivo',
             'icon_color' => 'yellow',
-            'url'        => 'gestionarCultivo',
+            'url'        => 'cultivos',
         ],
         [
             'text'       => 'Gestionar Zonas',

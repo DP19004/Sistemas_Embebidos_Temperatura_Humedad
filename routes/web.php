@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('gestionarCultivo', function () {
-    return view('Cultivo\gestionarCultivo');
-});
 
 Route::resource('kitSensores','App\Http\Controllers\KitSensoresController');
 Route::resource('alarmas', 'App\Http\Controllers\AlarmaController');

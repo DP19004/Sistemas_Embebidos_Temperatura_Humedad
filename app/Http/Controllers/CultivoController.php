@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cultivo;
 
 class CultivoController extends Controller
 {
@@ -13,7 +14,8 @@ class CultivoController extends Controller
      */
     public function index()
     {
-        //
+        $cultivos=Cultivo::all();
+        return view('Cultivo.gestionarCultivo')->with('cultivos',$cultivos);
     }
 
     /**
