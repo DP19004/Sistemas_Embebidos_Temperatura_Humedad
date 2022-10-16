@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('cultivos', function (Blueprint $table) {
             $table->id();
+            $table->String('nombre',50);
+            $table->double('TemperaturaMaxima');
+            $table->double('TemperaturaMinima');
+            $table->double('HumedadMaxima');
+            $table->double('HumedadMinima');
             $table->timestamps();
         });
     }
