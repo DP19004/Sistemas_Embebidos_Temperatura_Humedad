@@ -311,7 +311,7 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => 'Configuración de la cuenta'],
+        /*['header' => 'Configuración de la cuenta'],
         [
             'text' => 'Perfil',
             'url'  => 'admin/settings',
@@ -359,7 +359,7 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
+        ],*/
         ['header' => 'Opciones'],
         [
             'text'       => 'Gestionar Alarmas',
