@@ -4,7 +4,7 @@ Para los que quieran correr el proyecto tendrán que:
 2. Abrirlo en VSCode :v
 3. Abrir la terminal y ejecutar: composer install
 4. En la termina ejecutar npm install
-5. Tomar el archivo que dice env.example, copiarlo y pegarlo ahí mismo, se generará un archivo llamado env. example-copia, le cambian nombre y lo dejan como .env
+5. Tomar el archivo que dice .env.example, copiarlo y pegarlo ahí mismo, se generará un archivo llamado env.example-copia, le cambian nombre y lo dejan como .env (paso extra, modificar la configuración de la base de datos y para su base de datos local predeterminada.
  6. En terminal ejecutar php artisan key:generate
 7. En terminal ejecutar php artisan migrate
 8. En terminal npm install
@@ -15,7 +15,8 @@ Archivo para instalar [Si no les funciona el comando npm]
 
 https://www.mediafire.com/file/y5755pqui9cd1dc/node-v16.17.1-x64.msi/file
 
-tuto :v
+
+tutorial del paso a paso (en este tutorial se usó una base de datos externa, es decir una base de datos en la nube, recomendamos que usen su base de datos local, osea la predeterminada)
 
 https://drive.google.com/file/d/11sFI-x2MEZgU0dzvUVcdHrZEUAsqOzd8/view
 
