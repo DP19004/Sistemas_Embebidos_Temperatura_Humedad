@@ -68,7 +68,8 @@ class CultivoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cultivo = Cultivo::find($id);
+        return view('Cultivo.editarCultivo')->with('cultivo',$cultivo);
     }
 
     /**
@@ -80,7 +81,17 @@ class CultivoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cultivo = Cultivo::find($id);
+
+        $cultivo->nombre = $request->get('nombre');
+        $cultivo->TemperaturaMaxima = $request->get('temperaturaMax');
+        $cultivo->TemperaturaMinima = $request->get('temperaturaMin');
+        $cultivo->HumedadMaxima = $request->get('humedadMax');
+        $cultivo->HumedadMinima = $request->get('humedadMin');
+
+        $cultivo->save();
+
+        return redirect('/cultivos');
     }
 
     /**
@@ -91,6 +102,8 @@ class CultivoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cultivo = Cultivo::find($id);
+        $cultivo->delete();
+        return redirect('/cultivos');
     }
 }
