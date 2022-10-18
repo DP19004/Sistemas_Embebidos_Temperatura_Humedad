@@ -42,19 +42,21 @@
             <small style="color:crimson">{{$message}}</small>
         @enderror
     </div>
+
     <div class="mb-3">
-        <label for="" class="form-label">kit de sensores</label><br>
-        <select class="form-control" aria-label="Default select example" id="id_Kit" name='Id_Kit' value= "{{old('Id_Kit')}}" tabindex="5" >
+        <label for="" class="form-label">Kit de Sensores</label><br>
+        <select class="form-control" aria-label="Default select example" id="id_Kit" name='Id_Kit' value="{{old('Id_Kit')}}" tabindex="5" >
             <option selected></option>
-                @foreach ($arr as $item)
-                <option value="{{$item}}">{{$item}}</option>
-                @endforeach
-        </select>
+            @foreach ($kits as $k)
+            <option value="{{$k->id}}">{{$k->id}}</option>
+            @endforeach
+        </select> 
         @error('Id_Kit')
             <br>
             <small style="color:crimson">{{$message}}</small>
         @enderror
     </div>
+
     <div class="mb-3">
         <label for="" class="form-label">Alarmas programables</label><br>
         <select class="form-control" aria-label="Default select example" id="id_Alarma" name='Id_Alarma' value="{{old('Id_Alarma')}}" tabindex="6" >
@@ -64,6 +66,19 @@
             @endforeach
         </select> 
         @error('Id_Alarma')
+            <br>
+            <small style="color:crimson">{{$message}}</small>
+        @enderror
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Cultivos Disponibles</label><br>
+        <select class="form-control" aria-label="Default select example" id="id_Cultivo" name='Id_Cultivo' value="{{old('Id_Cultivo')}}" tabindex="7" >
+            <option selected></option>
+            @foreach ($cultivos as $c)
+            <option value="{{$c->id}}">{{$c->nombre}}</option>
+            @endforeach
+        </select> 
+        @error('Id_Cultivo')
             <br>
             <small style="color:crimson">{{$message}}</small>
         @enderror

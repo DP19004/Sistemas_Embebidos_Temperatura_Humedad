@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Cultivo extends Model
 {
     use HasFactory;
+    public function Zonas(){
+        return $this->belongsTo(Zona::class,'id');
+
+    }
 }

@@ -46,7 +46,7 @@
           <td>{{$zona->periodoDeRegistro}}</td>
           <td>{{$zona->id_Kit}}</td>
           <td>{{$zona->id_Alarma}}</td>
-          <td>pendiente</td>
+          <td>{{$zona->id_Cultivo}}</td>
           <td>
             <button class="btn btn-info" title="Edita la zona">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Zona;
 use App\Models\KitSensores;
 use App\Models\Alarma;
+use App\Models\Cultivo;
 
 class ZonaController extends Controller
 {
@@ -17,7 +18,10 @@ class ZonaController extends Controller
     public function index()
     {
         $zonas = Zona::all();
-
+        $zonas = Zona::all();
+        $kits = KitSensores::all();
+        $alarmas = Alarma::all();
+        $cultivos =Cultivo::all();
 
         return view('Zonas.indexZonas')->with('zonas',$zonas);
     }
@@ -30,25 +34,21 @@ class ZonaController extends Controller
     public function create()
     {
         $zonas = Zona::all();
-        $kits = KitSensores::all();
+        $kits = KitSensores::where('status','0')->get();
+        //$kits = KitSensores::all();
         $alarmas = Alarma::all();
-
+        $cultivos =Cultivo::all();
         
         $i = 0;
-        $arr = array();
-        foreach($kits as $kit){
-            foreach($zonas as $zona){
-                if($kit->id!=$zona->id_Kit){
-                    $arr[$i] = $kit->id;
-                }
-                else{break;}
-            }
-            
-            $i= $i+1;
-        }
+        
+        
         
         //
-        return view('Zonas.create')->with('alarmas',$alarmas)->with('arr',$arr)->with('zonas',$zonas);
+        return view('Zonas.create')
+        ->with('alarmas',$alarmas)
+        ->with('kits',$kits)
+        ->with('zonas',$zonas)
+        ->with('cultivos',$cultivos);
         
     }
 
@@ -60,13 +60,15 @@ class ZonaController extends Controller
      */
     public function store(Request $request)
     {
+        $sensor = KitSensores::find($request->get('Id_Kit'));
         $request->validate([
             'Nombre'=> ['required'],
             'Latitud'=> ['required'],
             'Longitud'=> ['required'],
             'PeriodoDeRegistro'=> ['required'],
             'Id_Kit'=> ['required'],
-            'Id_Alarma'=> ['required']
+            'Id_Alarma'=> ['required'],
+            'Id_Cultivo'=> ['required']
         ]);
         //
         $zonas = new Zona();
@@ -77,6 +79,9 @@ class ZonaController extends Controller
         $zonas->periodoDeRegistro = $request->get('PeriodoDeRegistro');
         $zonas->id_Kit = $request->get('Id_Kit');
         $zonas->id_Alarma = $request->get('Id_Alarma');
+        $zonas->id_Cultivo = $request->get('Id_Cultivo');
+        $sensor->status =1;
+        $sensor->save();
         $zonas->save();
         return redirect('/Zonas');
     }

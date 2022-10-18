@@ -20,6 +20,7 @@ return new class extends Migration
             $table->double('TemperaturaMinima');
             $table->double('HumedadMaxima');
             $table->double('HumedadMinima');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

@@ -43,7 +43,7 @@ class CultivoController extends Controller
         $cultivos->TemperaturaMinima = $request->get('temperaturaMin');
         $cultivos->HumedadMaxima = $request->get('humedadMax');
         $cultivos->HumedadMinima = $request->get('humedadMin');
-
+        $cultivos->status =false;
         $cultivos->save();
 
         return redirect('/cultivos');

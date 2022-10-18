@@ -18,6 +18,7 @@ return new class extends Migration
             $table->Integer('serialHumedad');
             $table->Integer('serialTemperatura');
             $table->date('fechaColocacion');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
