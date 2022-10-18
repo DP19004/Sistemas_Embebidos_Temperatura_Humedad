@@ -18,12 +18,9 @@ class ZonaController extends Controller
     public function index()
     {
         $zonas = Zona::all();
-        $zonas = Zona::all();
-        $kits = KitSensores::all();
-        $alarmas = Alarma::all();
-        $cultivos =Cultivo::all();
-
-        return view('Zonas.indexZonas')->with('zonas',$zonas);
+        //
+        return view('Zonas.indexZonas')
+        ->with('zonas',$zonas);
     }
 
     /**
@@ -38,17 +35,21 @@ class ZonaController extends Controller
         //$kits = KitSensores::all();
         $alarmas = Alarma::all();
         $cultivos =Cultivo::all();
-        
-        $i = 0;
-        
-        
-        
+        $i =0;
+        foreach($kits as $k){
+            $i++;
+        }
+        if( $i == 0){
+            $mensaje =('para añadir una nueva zona primero debe registrar un nuevo kit de sensores');
+        }
+        else{$mensaje =(''); }
         //
         return view('Zonas.create')
         ->with('alarmas',$alarmas)
         ->with('kits',$kits)
         ->with('zonas',$zonas)
-        ->with('cultivos',$cultivos);
+        ->with('cultivos',$cultivos)
+        ->with('mensaje',$mensaje);
         
     }
 

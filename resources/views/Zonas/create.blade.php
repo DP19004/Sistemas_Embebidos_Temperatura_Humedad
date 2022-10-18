@@ -35,7 +35,7 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Periodo de registro</label>
+        <label for="" class="form-label">Periodo de registro(hrs)</label>
         <input id="periodoDeRegistro" name="PeriodoDeRegistro" type="number" step="any" value="{{old('PeriodoDeRegistro')}}" class="form-control" tabindex="4" >
         @error('PeriodoDeRegistro')
             <br>
@@ -55,6 +55,11 @@
             <br>
             <small style="color:crimson">{{$message}}</small>
         @enderror
+        @if ($mensaje == 'para añadir una nueva zona primero debe registrar un nuevo kit de sensores')
+            <br>
+            <small style="color:rgb(202, 122, 2)">{{$mensaje}}</small>
+        @endif
+            
     </div>
 
     <div class="mb-3">
