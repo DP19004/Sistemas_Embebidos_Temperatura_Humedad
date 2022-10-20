@@ -1,7 +1,7 @@
 
 Para los que quieran correr el proyecto tendrán que:
 1. Clonar el repositorio
-2. Abrirlo en VSCode :v
+2. Abrirlo en Visual Studio Code
 3. Abrir la terminal y ejecutar: composer install
 4. En la termina ejecutar npm install
 5. Tomar el archivo que dice .env.example, copiarlo y pegarlo ahí mismo, se generará un archivo llamado env.example-copia, le cambian nombre y lo dejan como .env (paso extra, modificar la configuración de la base de datos y para su base de datos local predeterminada.
