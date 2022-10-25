@@ -23,9 +23,22 @@
 
     @foreach($alarmas as $alarma)
     @if($alarma->status==1)
+    <p> <?php $alarma_importancia = $alarma->importancia ?></p> 
+    <p> <?php $alarma_nombre = $alarma->nombre ?></p>
+    <p> <?php $alarma_id = $alarma->id ?></p>
 
-      @switch(true)
-        @case($alarma->importancia=='Baja')
+
+
+      @foreach($zonas as $zona)
+        @if($zona->id_Alarma == $alarma_id)
+        
+        <p> <?php $zona_nombre = $zona->nombre ?></p>
+        <p> <?php $zona_id_Cultivo = $zona->id_Cultivo ?></p>
+        @foreach($cultivos as $cultivo)
+        @if($cultivo->id == $zona_id_Cultivo)
+        @switch(true)
+        @case($alarma_importancia=='Baja')
+          
 
         <div class="alert alert-primary alert-dismissible fade show" role="alert">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
@@ -33,14 +46,14 @@
         </svg>
         <strong>Warning</strong> 
         <br>
-        La Alarma "{{$alarma->nombre}}" de importancia {{$alarma->importancia}}  se ha activado ir a revisar la zona de cultivo xxxx
+        La Alarma "{{$alarma_nombre}}" de importancia {{$alarma_importancia}}  se ha activado ir a revisar la zona de cultivo de {{$zona_nombre}} que cultiva {{$cultivo->nombre}}
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
       </button>
         </div>
         @break
 
-        @case($alarma->importancia=='Media')
+        @case($alarma_importancia=='Media')
 
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
@@ -48,14 +61,14 @@
         </svg>
         <strong>Warning</strong> 
         <br>
-        La Alarma "{{$alarma->nombre}}" de importancia {{$alarma->importancia}}  se ha activado ir a revisar la zona de cultivo xxxx
+        La Alarma "{{$alarma_nombre}}" de importancia {{$alarma_importancia}}  se ha activado ir a revisar la zona de cultivo de {{$zona_nombre}} que cultiva {{$cultivo->nombre}}
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
       </button>
         </div>
         @break
 
-        @case($alarma->importancia=='Alta')
+        @case($alarma_importancia=='Alta')
 
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
@@ -63,7 +76,7 @@
           </svg>
           <strong>Warning</strong> 
           <br>
-          La Alarma "{{$alarma->nombre}}" de importancia {{$alarma->importancia}}  se ha activado ir a revisar la zona de cultivo xxxx
+          La Alarma "{{$alarma_nombre}}" de importancia {{$alarma_importancia}}  se ha activado ir a revisar la zona de cultivo de {{$zona_nombre}} que cultiva {{$cultivo->nombre}}
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -71,7 +84,11 @@
           @break
 
         @endswitch
+        @endif
+        @endforeach
 
+        @endif
+        @endforeach
     @endif
     @endforeach
 
