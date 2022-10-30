@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Alarma;
 use App\Models\Cultivo;
 use App\Models\Zona;
-
+use Auth;
 
 
 
@@ -22,10 +22,21 @@ class NivelController extends Controller
         $alarmas = Alarma::all();
         $cultivos = Cultivo::all();
         $zonas = Zona::all();
-        return view('dashboard')
+        if(Auth::user()->name=='admin')
+        {
+          return view('dashboard')
         ->with('alarmas', $alarmas)
         ->with('zonas',$zonas)
         ->with('cultivos',$cultivos);
+        }
+        else
+        {
+        return view('usuario_n2.index')
+        ->with('alarmas', $alarmas)
+        ->with('zonas',$zonas)
+        ->with('cultivos',$cultivos);
+    }
+    
     }
 
     /**
