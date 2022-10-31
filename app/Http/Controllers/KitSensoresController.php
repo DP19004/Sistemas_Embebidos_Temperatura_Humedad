@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\KitSensores;
+use App\Models\Temperatura;
+use App\Models\Humedad;
+
 
 class KitSensoresController extends Controller
 {
@@ -37,6 +40,16 @@ class KitSensoresController extends Controller
     public function store(Request $request)
     {
         $kitSensores = new KitSensores();
+        $hum = new Humedad();
+        $temps = new Temperatura();
+        
+        $hum->valor = rand(1,99);
+        $hum->save();
+        
+        
+        $temps->valor = rand(-30.00,70.00);
+        $temps->save();
+        
         $kitSensores->id = $request->get('id');
         $kitSensores->serialHumedad = $request->get('serialHumedad');
         $kitSensores->serialTemperatura = $request->get('serialTemperatura');

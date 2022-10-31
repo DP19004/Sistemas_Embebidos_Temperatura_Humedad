@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Humedad;
 use Illuminate\Http\Request;
 
 class HumedadController extends Controller
@@ -34,7 +34,13 @@ class HumedadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*
+        $hum = new Humedad();
+        $hum->valor = rand(0.01,0.90);
+        
+        $hum->save();
+        return redirect('/dashboard');
+        */
     }
 
     /**

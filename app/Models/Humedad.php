@@ -9,5 +9,4 @@ class Humedad extends Model
 {
     use HasFactory;
     protected $fillable = ['valor'];
-
 }

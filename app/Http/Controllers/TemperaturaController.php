@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Temperatura;
 use Illuminate\Http\Request;
 
 class TemperaturaController extends Controller
@@ -34,7 +35,12 @@ class TemperaturaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*
+        $temps = new Temperatura();
+        $temps->valor = rand(-30.0,70.0);
+        $temps->save();
+        return redirect('/dashboard');
+        */
     }
 
     /**

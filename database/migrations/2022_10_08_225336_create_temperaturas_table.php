@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('temperaturas', function (Blueprint $table) {
             $table->id();
             $table->double('valor', 2, 2);
-            
+            $table->timestamps();
         });
     }
 
