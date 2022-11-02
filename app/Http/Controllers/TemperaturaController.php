@@ -41,6 +41,7 @@ class TemperaturaController extends Controller
         $temps->save();
         return redirect('/dashboard');
         */
+        
     }
 
     /**

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('humedades', function (Blueprint $table) {
             $table->id();
-            $table->double('valor', 2, 2);
+            $table->double('valor');
             $table->timestamps();
         });
     }
