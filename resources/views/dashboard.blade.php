@@ -18,7 +18,7 @@
     <title>Dashboard</title>
   </head>
   <body>
-    <h1>Dashboard</h1>
+    <h1>Dashboard vista admin</h1>
 
 
     @foreach($alarmas as $alarma)

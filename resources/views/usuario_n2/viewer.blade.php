@@ -15,7 +15,7 @@
     <title>Dashboard</title>
   </head>
   <body>
-    <h1>Alarmas Activas</h1>
+    <h1>Alarmas Activas - Vista viewer</h1>
 
 
     @foreach($alarmas as $alarma)

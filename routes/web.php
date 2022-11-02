@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\NivelController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,17 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('kitSensores','App\Http\Controllers\KitSensoresController');
+Route::resource('kitSensores', 'App\Http\Controllers\KitSensoresController');
 Route::resource('alarmas', 'App\Http\Controllers\AlarmaController');
 Route::resource('registros', 'App\Http\Controllers\RegistroController');
-Route::resource('Zonas','App\Http\Controllers\ZonaController');
-Route::resource('cultivos','App\Http\Controllers\CultivoController');
+Route::resource('Zonas', 'App\Http\Controllers\ZonaController');
+Route::resource('cultivos', 'App\Http\Controllers\CultivoController');
 
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::resource('dashboard', 'App\Http\Controllers\NivelController');
-});
+Route::get('/dashboard', [App\Http\Controllers\NivelController::class, 'index'])->name('home');
+Route::get('/viewer', [NivelController::class, 'getViewer']);
