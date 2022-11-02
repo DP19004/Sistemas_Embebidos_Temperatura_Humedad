@@ -2,6 +2,7 @@
 @section('title', 'Zonas')
 @section('content')
 
+
 <style>
     table{
       text-align: center;
@@ -66,10 +67,15 @@
     </table>
     
   </div>
+    <?php
+    $x =shell_exec('php artisan schedule:work');
+    Echo "$x <-mensaje de error de la prueba para activar el schedule";
+    ?>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
+
 @endsection
