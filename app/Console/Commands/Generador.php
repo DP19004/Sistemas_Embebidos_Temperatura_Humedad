@@ -49,16 +49,14 @@ class Generador extends Command
         }
         
         $humedades = new Humedad();
-        $humedades->valor = $hum;
+        $humedades->valor = 20;
         $humedades->save();
         */
+
         $temperaturas = new Temperatura();
         $temperaturas->valor = $temp;
         $temperaturas->save(); 
-
-        
         $cult = new Cultivo();
-
         $cult->nombre ='Tomate';
         $cult->TemperaturaMaxima =35;
         $cult->TemperaturaMinima =rand(0,12);
