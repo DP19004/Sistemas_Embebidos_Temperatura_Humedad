@@ -7,6 +7,18 @@ use Illuminate\Http\Request;
 
 class TemperaturaController extends Controller
 {
+
+    /**
+     * create a new controller instance
+     *
+     * @return voidagre
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('soloadmin', ['only' => 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy']);
+    }
+
     /**
      * Display a listing of the resource.
      *

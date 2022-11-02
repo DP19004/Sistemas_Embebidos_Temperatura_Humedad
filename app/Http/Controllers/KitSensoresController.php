@@ -10,6 +10,18 @@ use App\Models\Humedad;
 
 class KitSensoresController extends Controller
 {
+
+    /**
+     * create a new controller instance
+     *
+     * @return voidagre
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('soloadmin', ['only' => 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +59,7 @@ class KitSensoresController extends Controller
         $kitSensores->status = false;
         $kitSensores->save();
 
-       return redirect('/kitSensores');
+        return redirect('/kitSensores');
     }
 
     /**
@@ -70,7 +82,7 @@ class KitSensoresController extends Controller
     public function edit($id)
     {
         $kitSensor = KitSensores::find($id);
-        return view('kitSensor.edit')->with('kitSensor',$kitSensor);
+        return view('kitSensor.edit')->with('kitSensor', $kitSensor);
     }
 
     /**
@@ -82,17 +94,17 @@ class KitSensoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $kitSensor = KitSensores::find($id);
 
-        
+
         $kitSensor->serialHumedad = $request->get('serialHumedad');
         $kitSensor->serialTemperatura = $request->get('serialTemperatura');
         $kitSensor->fechaColocacion = $request->get('fechaColocacion');
 
         $kitSensor->save();
 
-       return redirect('/kitSensores');
+        return redirect('/kitSensores');
     }
 
     /**

@@ -10,6 +10,18 @@ use App\Models\Cultivo;
 
 class ZonaController extends Controller
 {
+
+    /**
+     * create a new controller instance
+     *
+     * @return voidagre
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('soloadmin', ['only' => 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +32,7 @@ class ZonaController extends Controller
         $zonas = Zona::all();
         //
         return view('Zonas.indexZonas')
-        ->with('zonas',$zonas);
+            ->with('zonas', $zonas);
     }
 
     /**
@@ -31,26 +43,26 @@ class ZonaController extends Controller
     public function create()
     {
         $zonas = Zona::all();
-        $kits = KitSensores::where('status','0')->get();
+        $kits = KitSensores::where('status', '0')->get();
         //$kits = KitSensores::all();
         $alarmas = Alarma::all();
-        $cultivos =Cultivo::all();
-        $i =0;
-        foreach($kits as $k){
+        $cultivos = Cultivo::all();
+        $i = 0;
+        foreach ($kits as $k) {
             $i++;
         }
-        if( $i == 0){
-            $mensaje =('para añadir una nueva zona primero debe registrar un nuevo kit de sensores');
+        if ($i == 0) {
+            $mensaje = ('para añadir una nueva zona primero debe registrar un nuevo kit de sensores');
+        } else {
+            $mensaje = ('');
         }
-        else{$mensaje =(''); }
         //
         return view('Zonas.create')
-        ->with('alarmas',$alarmas)
-        ->with('kits',$kits)
-        ->with('zonas',$zonas)
-        ->with('cultivos',$cultivos)
-        ->with('mensaje',$mensaje);
-        
+            ->with('alarmas', $alarmas)
+            ->with('kits', $kits)
+            ->with('zonas', $zonas)
+            ->with('cultivos', $cultivos)
+            ->with('mensaje', $mensaje);
     }
 
     /**
@@ -63,13 +75,13 @@ class ZonaController extends Controller
     {
         $sensor = KitSensores::find($request->get('Id_Kit'));
         $request->validate([
-            'Nombre'=> ['required'],
-            'Latitud'=> ['required'],
-            'Longitud'=> ['required'],
-            'PeriodoDeRegistro'=> ['required'],
-            'Id_Kit'=> ['required'],
-            'Id_Alarma'=> ['required'],
-            'Id_Cultivo'=> ['required']
+            'Nombre' => ['required'],
+            'Latitud' => ['required'],
+            'Longitud' => ['required'],
+            'PeriodoDeRegistro' => ['required'],
+            'Id_Kit' => ['required'],
+            'Id_Alarma' => ['required'],
+            'Id_Cultivo' => ['required']
         ]);
         //
         $zonas = new Zona();
@@ -81,7 +93,7 @@ class ZonaController extends Controller
         $zonas->id_Kit = $request->get('Id_Kit');
         $zonas->id_Alarma = $request->get('Id_Alarma');
         $zonas->id_Cultivo = $request->get('Id_Cultivo');
-        $sensor->status =1;
+        $sensor->status = 1;
         $sensor->save();
         $zonas->save();
         return redirect('/Zonas');
