@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
+use App\Models\Cultivo;
 
 class Generador extends Command
 {
@@ -28,14 +29,22 @@ class Generador extends Command
      */
     public function handle()
     {
-        /*
-        $hum = 0;
-        $temp = rand(-30.00,70.00);
-        if($temp <=0)
+        
+        /*$hum = 0;
+        $temp = 7;
+        rand(-30.00,70.00);
+        if($temp <= 0)
         {
-            $hum= rand(0.05,0.2);
+            $hum = rand(0.05,0.2);
         }
-        */
+        
+        $humedades = new Humedad();
+        $humedades->valor = $hum;
+        $humedades->save();
+        
+        $temperaturas = new Temperatura();
+        $temperaturas->valor = $temp;
+        $temperaturas->save(); */
         return Command::SUCCESS;
     }
 }
