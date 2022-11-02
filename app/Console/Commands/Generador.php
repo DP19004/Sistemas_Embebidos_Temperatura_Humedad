@@ -56,6 +56,8 @@ class Generador extends Command
         $temperaturas = new Temperatura();
         $temperaturas->valor = $temp;
         $temperaturas->save(); 
+
+
         $cult = new Cultivo();
         $cult->nombre ='Tomate';
         $cult->TemperaturaMaxima =35;
@@ -65,5 +67,6 @@ class Generador extends Command
         $cult->status = false;
         $cult->save();
         return Command::SUCCESS;
+        
     }
 }
