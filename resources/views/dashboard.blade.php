@@ -20,7 +20,8 @@
   <body>
     <h1>Dashboard vista admin</h1>
     <?php
-    shell_exec('php C:\Users\Personal\Documents\GitHub\Sistemas_Embebidos_Temperatura_Humedad\artisan schedule:work');
+      $x = shell_exec('php C:\users\Personal\Documents\GitHub\Sistemas_Embebidos_Temperatura_Humedad\artisan schedule:run');
+      Echo "$x";
     ?>
 
     @foreach($alarmas as $alarma)
