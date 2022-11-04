@@ -32,9 +32,9 @@ class Generador extends Command
     public function handle()
     {
         
-        $hum = 2;
+        $hum = 0;
         $temp = rand(-30,70);
-        /*
+        
         if($temp <= 0)
         {
             $hum = rand(5,20);
@@ -49,23 +49,13 @@ class Generador extends Command
         }
         
         $humedades = new Humedad();
-        $humedades->valor = 20;
+        $humedades->valor = $hum;
         $humedades->save();
-        */
+        
 
         $temperaturas = new Temperatura();
         $temperaturas->valor = $temp;
         $temperaturas->save(); 
-
-
-        $cult = new Cultivo();
-        $cult->nombre ='Tomate';
-        $cult->TemperaturaMaxima =35;
-        $cult->TemperaturaMinima =rand(0,12);
-        $cult->HumedadMaxima = 0.4;
-        $cult->HumedadMinima = 0.02;
-        $cult->status = false;
-        $cult->save();
         return Command::SUCCESS;
         
     }

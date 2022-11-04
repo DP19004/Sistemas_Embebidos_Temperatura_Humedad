@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('humedades', function (Blueprint $table) {
+        Schema::create('humedads', function (Blueprint $table) {
             $table->id();
             $table->double('valor');
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('humedades');
+        Schema::dropIfExists('humedads');
     }
 };
