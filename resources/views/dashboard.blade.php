@@ -19,7 +19,9 @@
   </head>
   <body>
     <h1>Dashboard vista admin</h1>
-
+    <?php
+    shell_exec('php C:\Users\Personal\Documents\GitHub\Sistemas_Embebidos_Temperatura_Humedad\artisan schedule:work');
+    ?>
 
     @foreach($alarmas as $alarma)
     @if($alarma->status==1)
