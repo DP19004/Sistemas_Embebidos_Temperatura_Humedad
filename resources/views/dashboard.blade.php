@@ -3,13 +3,11 @@
 @section('content')
 
     <h1>Dashboard vista admin</h1>
-<<<<<<< HEAD
-=======
+    
     <?php
       $x = shell_exec('php C:\users\Personal\Documents\GitHub\Sistemas_Embebidos_Temperatura_Humedad\artisan schedule:run');
       Echo "$x";
     ?>
->>>>>>> 46a4e5bde25a399e962970e0215cdc4abe1a1b0e
 
     @foreach($alarmas as $alarma)
     @if($alarma->status==1)
