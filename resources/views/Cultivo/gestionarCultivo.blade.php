@@ -8,7 +8,7 @@
       text-align: center;
       box-shadow: 0px 0px 15px #454545;
       -moz-box-shadow: 0px 0px 15px #454545;
-      filter: progid:DXImageTransform.Microsoft.Shadow(color='#454545', Direction=135, Strength=4);    
+      filter: progid:DXImageTransform.Microsoft.Shadow(color='#454545', Direction=135, Strength=4);
     }
 </style>
 
@@ -32,7 +32,8 @@
               <th scope="col">TemperaturaMínima</th>
               <th scope="col">HumedadMáxima</th>
               <th scope="col">HumedadMínima</th>
-            </tr>  
+              <th scope="col">Acciones</th>
+            </tr>
           </thead>
 
           <tbody>
