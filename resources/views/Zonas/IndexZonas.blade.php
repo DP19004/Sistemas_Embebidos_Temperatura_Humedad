@@ -67,10 +67,7 @@
     </table>
     
   </div>
-    <?php
-    $x =shell_exec('php artisan schedule:work');
-    Echo "$x <-mensaje de error de la prueba para activar el schedule";
-    ?>
+    
 </div>
 </div>
 </div>
