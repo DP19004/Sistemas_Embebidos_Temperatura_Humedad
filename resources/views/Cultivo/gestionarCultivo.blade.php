@@ -28,10 +28,10 @@
           <thead>
             <tr class="bg-title">
               <th scope="col">Nombre</th>
-              <th scope="col">TemperaturaMáxima</th>
-              <th scope="col">TemperaturaMínima</th>
-              <th scope="col">HumedadMáxima</th>
-              <th scope="col">HumedadMínima</th>
+              <th scope="col">TemperaturaMáx</th>
+              <th scope="col">TemperaturaMín</th>
+              <th scope="col">HumedadMáx</th>
+              <th scope="col">HumedadMín</th>
               <th scope="col">Acciones</th>
             </tr>
           </thead>
