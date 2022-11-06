@@ -56,21 +56,3 @@
 <!-- Card -->
 
 @endsection
-
-<!-- Card -->
-<div class="d-flex">
-    <div class="card mx-auto" style="width: 60%; margin-top: 2%;">
-        <h5 class="card-header text-center text-white bg-dark" >Agregar Alarma</h5>
-        <div class="card-body">
-            <!-- Formulario -->
-
-                <!-- Botones -->
-                <div class="text-center">
-                    <a href="/alarmas" class="btn btn-secondary" tabindex="8">Cancelar</a>
-                    <button type="submit" class="btn btn-primary" tabindex="9">Guardar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- Card -->
