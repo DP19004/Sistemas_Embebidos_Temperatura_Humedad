@@ -17,7 +17,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Correo</label>
-                    <input id="email" name="email" type="text"   class="form-control" tabindex="2" required="" >
+                    <input id="email" name="email" type="email"   class="form-control" tabindex="2" required="" >
                 </div>
                 <p>
                     <b style="color: rgb(57, 136, 253)">Se generará una contraseña aleatoria y se enviará al correo electrónico registado</b>
