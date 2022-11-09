@@ -75,7 +75,7 @@ class AlarmaController extends Controller
      */
     public function show($id)
     {
-        //
+       //
     }
 
     /**
@@ -86,7 +86,8 @@ class AlarmaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $alarma = Alarma::find($id);
+        return view('alarma.editarAlarma')->with('alarma', $alarma);
     }
 
     /**
@@ -98,7 +99,18 @@ class AlarmaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $alarma = Alarma::find($id);
+
+        $alarma->nombre = $request->get('nombre');
+        $alarma->temperaturaMax = $request->get('temperaturaMax');
+        $alarma->temperaturaMin = $request->get('temperaturaMin');
+        $alarma->humedadMax = $request->get('humedadMax');
+        $alarma->humedadMin = $request->get('humedadMin');
+        $alarma->importancia = $request->get('importancia');
+        $alarma->recomendacion = $request->get('recomendacion');
+
+        $alarma->save();
+        return redirect('/alarmas');
     }
 
     /**
@@ -109,6 +121,8 @@ class AlarmaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $alarma = Alarma::find($id);
+        $alarma->delete();
+        return redirect('/alarmas');
     }
 }
