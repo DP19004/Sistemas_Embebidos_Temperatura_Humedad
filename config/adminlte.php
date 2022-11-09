@@ -362,11 +362,17 @@ return [
         ],*/
         ['header' => 'Opciones'],
         [
+            'text'       => 'Gestionar Usuarios',
+            'icon_color' => 'red',
+            'url'        => 'usuarios',
+        ],
+
+        [
             'text'       => 'Gestionar Alarmas',
             'icon_color' => 'cyan',
             'url'        => 'alarmas',
         ],
-        
+
         [
             'text'       => 'Gestionar Cultivo',
             'icon_color' => 'yellow',

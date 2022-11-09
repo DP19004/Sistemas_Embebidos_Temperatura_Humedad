@@ -25,7 +25,7 @@ class NivelController extends Controller
 
     /**
      * show the aplication dashboard
-     * 
+     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
@@ -44,7 +44,7 @@ class NivelController extends Controller
     {
         $alarmas = Alarma::all();
         $cultivos = Cultivo::all();
-        $zonas = Zona::all();      
+        $zonas = Zona::all();
 
         return view('usuario_n2/viewer')
             ->with('alarmas', $alarmas)

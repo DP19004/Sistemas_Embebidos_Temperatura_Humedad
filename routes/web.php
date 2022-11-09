@@ -25,5 +25,7 @@ Route::resource('registros', 'App\Http\Controllers\RegistroController');
 Route::resource('Zonas', 'App\Http\Controllers\ZonaController');
 Route::resource('cultivos', 'App\Http\Controllers\CultivoController');
 
+Route::resource('usuarios', 'App\Http\Controllers\UsersController');
+
 Route::get('/dashboard', [App\Http\Controllers\NivelController::class, 'index'])->name('home');
 Route::get('/viewer', [NivelController::class, 'getViewer']);
