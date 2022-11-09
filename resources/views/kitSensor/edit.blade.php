@@ -6,7 +6,7 @@
 <!-- Card -->
 <div class="d-flex">
     <div class="card mx-auto" style="width: 60%; margin-top: 2%;">
-        <h5 class="card-header text-center text-white bg-dark" >Editar Cultivo</h5>
+        <h5 class="card-header text-center text-white bg-dark" >Editar Sensor</h5>
             <div class="card-body">
                 <!-- Formulario -->
                 <form action="/kitSensores/{{$kitSensor->id}}" method="POST">

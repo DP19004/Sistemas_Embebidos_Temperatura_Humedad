@@ -48,7 +48,6 @@
                     <td>{{$alarma->importancia}}</td>
                     <td>{{$alarma->recomendacion}}</td>
                     <td>
-                    <td>
                         <form action="{{ route ('alarmas.destroy',$alarma->id)}}" method="POST">
                             <a href="/alarmas/{{$alarma->id}}/edit" class="btn btn-info" title="Edita la alarma">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
