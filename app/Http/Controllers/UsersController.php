@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Mail\NuevoUsuario;
+use  Illuminate\Support\Facades\Mail;
+
+
 
 class UsersController extends Controller
 {
@@ -45,13 +49,9 @@ class UsersController extends Controller
      */
     function generatePassword()
     {
-        $key = "";
-        $pattern = "1234567890abcdefghijklmñnopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ.-_*/=[]{}#@|~¬&()?¿";
-        $max = strlen($pattern)-1;
-        for($i = 0; $i < 8; $i++){
-            $key .= substr($pattern, mt_rand(0,$max), 1);
-        }
-        return $key;
+        $longitud = 8; // longitud del password
+        $pass = substr(md5(rand()),0,$longitud);
+        return($pass); // devuelve el password
     }
 
     /**
@@ -62,17 +62,33 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        $contraseña =  $this->generatePassword();
+
+  // esta otra forma evita emails duplicados
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        ]);
+
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($contraseña),
+            'fullacces' => 'no',
+        ]);
+  /*
         $users = new User();
         $users->id = $request->get('id');
         $users->name = $request->get('name');
         $users->email = $request->get('email');
-
-        $contraseña = $this->generatePassword();
-
         $users->password = Hash::make($contraseña);
         $users->fullacces = 'no';
         $users->save();
+*/
 
+        $correos = new NuevoUsuario($request->all() , $contraseña);
+        Mail::to($request->get('email'))->send($correos);
+        
         return redirect('/usuarios');
     }
 
