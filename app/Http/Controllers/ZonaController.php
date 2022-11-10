@@ -118,7 +118,16 @@ class ZonaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $zona = Zona::find($id);
+        $kits = KitSensores::all();
+        $alarmas = Alarma::all();
+        $cultivos = Cultivo::all();
+
+        return view('Zonas.editZonas')
+        ->with('alarmas', $alarmas)
+        ->with('zona', $zona)
+        ->with('cultivos', $cultivos)
+        ->with('kits', $kits);
     }
 
     /**
@@ -130,7 +139,31 @@ class ZonaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $zona = Zona::find($id);
+        $sensor = KitSensores::find($request->get('Id_Kit'));
+
+        $request->validate([
+            'Nombre' => ['required'],
+            'Latitud' => ['required'],
+            'Longitud' => ['required'],
+            'PeriodoDeRegistro' => ['required'],
+            'Id_Kit' => ['required'],
+            'Id_Alarma' => ['required'],
+            'Id_Cultivo' => ['required']
+        ]);
+
+        $zona->nombre = $request->get('Nombre');
+        $zona->latitud = $request->get('Latitud');
+        $zona->longitud = $request->get('Longitud');
+        $zona->periodoDeRegistro = $request->get('PeriodoDeRegistro');
+        $zona->id_Kit = $request->get('Id_Kit');
+        $zona->id_Alarma = $request->get('Id_Alarma');
+        $zona->id_Cultivo = $request->get('Id_Cultivo');
+
+        $sensor->save();
+        $zona->save();
+        
+        return redirect('/Zonas');
     }
 
     /**
@@ -141,6 +174,8 @@ class ZonaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $zona = Zona::find($id);
+        $zona->delete();
+        return redirect('/Zonas');
     }
 }

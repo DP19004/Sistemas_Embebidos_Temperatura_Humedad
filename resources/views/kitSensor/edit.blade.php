@@ -24,10 +24,11 @@
                         <label for="" class="form-label">Fecha de Colocacion</label>
                         <input id="fechaColocacion" name="fechaColocacion" type="date"  class="form-control" value="{{$kitSensor->fechaColocacion}}">
                     </div>
-                    
                     <!--botones-->
-                    <a href="/kitSensores" class="btn btn-secondary" tabindex="8">Cancelar</a>
-                    <button type="submit" class="btn btn-primary" tabindex="9">Guardar</button>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                        <a href="/kitSensor" class="btn btn-secondary">Cancelar</a>
+                    </div>
                 </form>
             </div>
     </div>

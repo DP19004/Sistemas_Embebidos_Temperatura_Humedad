@@ -47,7 +47,7 @@
                 </div>
                 <!-- Botones -->
                 <div class="text-center">
-                <button type="submit" class="btn btn-primary" tabindex="8">Registrar</button>
+                <button type="submit" class="btn btn-primary" tabindex="8">Editar</button>
                     <a href="/alarmas" class="btn btn-secondary" tabindex="9">Cancelar</a>
                 </div>
                 </form>

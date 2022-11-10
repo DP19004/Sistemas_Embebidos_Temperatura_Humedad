@@ -17,11 +17,11 @@ class Zona extends Model
     }
     public function alarmas(){
 
-        return $this->hasMany(Alarma::class,'id_Alarma');
+        return $this->hasMany(Alarma::class,'id_Alarma', 'id');
         
     }
     
-     public function cultivos(){
+    public function cultivos(){
 
         return $this->hasMany(cultivo::class,'id_Cultivo');
         
