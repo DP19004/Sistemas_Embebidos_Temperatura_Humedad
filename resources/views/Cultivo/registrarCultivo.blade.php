@@ -25,11 +25,11 @@
                 </div>
                 <div class="form-group">
                     <label for="humedadMax">Humedad Maxima</label>
-                    <input type="number" class="form-control" name="humedadMax" required min="0" max="1" step="0.01">
+                    <input type="number" class="form-control" name="humedadMax" required min="0">
                 </div>
                 <div class="form-group">
                     <label for="humedadMin">Humedad Minima</label>
-                    <input type="number" class="form-control" name="humedadMin" required min="0" max="1" step="0.01">
+                    <input type="number" class="form-control" name="humedadMin" required min="0">
                 </div>
                 <!-- Botones -->
                 <div class="text-center">
