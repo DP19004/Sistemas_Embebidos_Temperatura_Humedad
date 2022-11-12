@@ -1,8 +1,11 @@
 @extends('adminlte::page')
 @section('title', 'Zonas')
 @section('content')
-
-
+{{-- <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+ --}}
 <style>
     table{
       text-align: center;
@@ -76,4 +79,61 @@
 </div>
 </div>
 
+{{-- Aqui intente crear un grafico pero creo que el problema esta en que no detecta la libreria desde esta vista
+  tendria que insertarlo en el adminlte o algo asi 
+  <div>
+  Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        align: 'left',
+        text: 'Browser market shares. January, 2022'
+    },
+    subtitle: {
+        align: 'left',
+        text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+    },
+    accessibility: {
+        announceNewData: {
+            enabled: true
+        }
+    },
+    xAxis: {
+        type: 'category'
+    },
+    yAxis: {
+        title: {
+            text: 'Total percent market share'
+        }
+
+    },
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y:.1f}%'
+            }
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+    },
+
+    series: [
+        {
+            name: "Browsers",
+            colorByPoint: true,
+            data: <? = $data ?>
+        }
+    ],
+  });
+              
+</div> --}}
 @endsection

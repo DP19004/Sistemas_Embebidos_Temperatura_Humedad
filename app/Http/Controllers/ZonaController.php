@@ -30,9 +30,13 @@ class ZonaController extends Controller
     public function index()
     {
         $zonas = Zona::all();
-        //
-        return view('Zonas.indexZonas')
-            ->with('zonas', $zonas);
+        // para crear la data necesaria para los graficos, no parece presentar errores esta parte 
+        $puntos = [];
+        foreach($zonas as $z){
+            $puntos[] = ['name'=>$z['nombre'], 'y'=>floatval($z['latitud'])];
+        }
+        return view('Zonas.indexZonas',)
+            ->with('zonas', $zonas)->with(['data'=> json_encode($puntos)]);
     }
 
     /**
