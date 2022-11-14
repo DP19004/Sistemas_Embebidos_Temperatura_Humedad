@@ -30,7 +30,7 @@ class ZonaController extends Controller
     public function index()
     {
         $zonas = Zona::all();
-        // para crear la data necesaria para los graficos, no parece presentar errores esta parte 
+        // para crear la data necesaria para los graficos, no parece presentar errores esta parte
         $puntos = [];
         foreach($zonas as $z){
             $puntos[] = ['name'=>$z['nombre'], 'y'=>floatval($z['latitud'])];
@@ -80,9 +80,9 @@ class ZonaController extends Controller
         $sensor = KitSensores::find($request->get('Id_Kit'));
         $request->validate([
             'Nombre' => ['required'],
-            'Latitud' => ['required'],
-            'Longitud' => ['required'],
-            'PeriodoDeRegistro' => ['required'],
+            'Latitud' => ['required', 'numeric', 'min:0'],
+            'Longitud' => ['required', 'numeric', 'min:0'],
+            'PeriodoDeRegistro' => ['required', 'numeric', 'min:0'],
             'Id_Kit' => ['required'],
             'Id_Alarma' => ['required'],
             'Id_Cultivo' => ['required']
@@ -166,7 +166,7 @@ class ZonaController extends Controller
 
         $sensor->save();
         $zona->save();
-        
+
         return redirect('/Zonas');
     }
 

@@ -57,7 +57,7 @@
                         <br>
                         <small style="color:crimson">{{$message}}</small>
                     @enderror
-                    @if ($mensaje == 'para añadir una nueva zona primero debe registrar un nuevo kit de sensores')
+                    @if ($mensaje == 'Para añadir una nueva zona primero debe registrar un nuevo kit de sensores')
                         <br>
                         <small style="color:rgb(202, 122, 2)">{{$mensaje}}</small>
                     @endif
