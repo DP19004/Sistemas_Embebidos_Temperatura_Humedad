@@ -20,7 +20,7 @@
                     <input id="email" name="email" type="email"   class="form-control" tabindex="2" required="" >
                 </div>
                 <p>
-                    <b style="color: rgb(57, 136, 253)">Se generará una contraseña aleatoria y se enviará al correo electrónico registado</b>
+                    <b style="color: rgb(57, 136, 253)">Se generará una contraseña aleatoria y se enviará al correo electrónico registrado</b>
                 </p>
                 <!-- Botones -->
                 <div class="text-center">
