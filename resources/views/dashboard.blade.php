@@ -6,7 +6,7 @@
     
     <?php
       $x = shell_exec('php C:\users\Personal\Documents\GitHub\Sistemas_Embebidos_Temperatura_Humedad\artisan schedule:run');
-      Echo "$x";
+      //Echo "$x";
     ?>
 
     @foreach($alarmas as $alarma)

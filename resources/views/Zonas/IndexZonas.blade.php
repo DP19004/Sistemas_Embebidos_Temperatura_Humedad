@@ -43,14 +43,19 @@
         </thead>
       <tbody>
         @foreach ($zonas as $zona)
+        @foreach($alarmas as $a)
+        @foreach($cultivos as $c)
+        @if($a->id == $zona->id_Alarma)
+        @if($c->id == $zona->id_Cultivo)
+        
         <tr>
           <td>{{$zona->nombre}}</td>
           <td>{{$zona->latitud}}</td>
           <td>{{$zona->longitud}}</td>
           <td>{{$zona->periodoDeRegistro}}</td>
           <td>{{$zona->id_Kit}}</td>
-          <td>{{$zona->id_Alarma}}</td>
-          <td>{{$zona->id_Cultivo}}</td>
+          <td>{{$a->nombre}}</td>
+          <td>{{$c->nombre}}</td>
           <td>
             <form action="{{route('Zonas.destroy',$zona->id)}}" method="POST">
               <a href="/Zonas/{{$zona->id}}/edit" class="btn btn-info" ata-toggle="tooltip" data-placement="top" title="Clic para editar la zona">
@@ -68,6 +73,15 @@
             </form>
           </td>
         </tr>
+
+        @endif
+        @endif
+        
+        @endforeach
+        @endforeach
+        
+        
+        
         @endforeach
       </tbody>
     </table> 
