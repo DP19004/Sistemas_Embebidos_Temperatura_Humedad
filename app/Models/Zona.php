@@ -15,11 +15,12 @@ class Zona extends Model
         return $this->hasOne(kitSensores::class,'id_Kit');
         
     }
+    /*
     public function alarmas(){
 
         return $this->hasMany(Alarma::class,'id_Alarma', 'id');
         
-    }
+    }*/ 
     
     public function cultivos(){
 

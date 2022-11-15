@@ -42,6 +42,15 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="" class="form-label">Zona asignada</label><br>
+                    <select class="form-control"  aria-label="Default select example" id="zona" name='zona' tabindex="6" required>
+                        <option  value={{$zona->id}} selected>{{App\Models\Zona::find($alarma->id_Zona)->nombre}}</option>
+                        @foreach ($Zonas as $zona)
+                        <option value={{$zona->id}}>{{$zona->nombre}}</option>
+                        @endforeach                     
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="recomendacion" class="form-label">Recomendación</label>
                     <input id="recomendacion" name="recomendacion" type="text" class="form-control" tabindex="7" value="{{$alarma->recomendacion}}">
                 </div>

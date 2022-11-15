@@ -24,6 +24,11 @@ return new class extends Migration
             $table->boolean('status');
             $table->string('recomendacion');
             $table->timestamps();
+            
+            $table->unsignedBigInteger('id_Zona');
+            $table->foreign('id_Zona')->references('id')
+            ->on('zonas'); 
+
         });
     }
 

@@ -36,17 +36,13 @@
           <th scope="col">Longitud</th>
           <th scope="col">Periodo de registro</th>
           <th scope="col">Kit de Sensores</th>
-          <th scope="col">Alarmas</th>
           <th scope="col">Cultivos</th>
+          <th scope="col">Total de alarmas</th>
           <th scope="col">Acciones</th>
         </tr>
         </thead>
       <tbody>
-        @foreach ($zonas as $zona)
-        @foreach($alarmas as $a)
-        @foreach($cultivos as $c)
-        @if($a->id == $zona->id_Alarma)
-        @if($c->id == $zona->id_Cultivo)
+        @foreach ($zonas as $zona)     
         
         <tr>
           <td>{{$zona->nombre}}</td>
@@ -54,8 +50,8 @@
           <td>{{$zona->longitud}}</td>
           <td>{{$zona->periodoDeRegistro}}</td>
           <td>{{$zona->id_Kit}}</td>
-          <td>{{$a->nombre}}</td>
-          <td>{{$c->nombre}}</td>
+          <td>{{App\Models\Cultivo::find($zona->id_Cultivo)->nombre}}</td>
+          <td>{{App\Models\Alarma::where('id_Zona',$zona->id)->count()}}</td>
           <td>
             <form action="{{route('Zonas.destroy',$zona->id)}}" method="POST">
               <a href="/Zonas/{{$zona->id}}/edit" class="btn btn-info" ata-toggle="tooltip" data-placement="top" title="Clic para editar la zona">
@@ -72,16 +68,8 @@
               </button>
             </form>
           </td>
-        </tr>
-
-        @endif
-        @endif
-        
-        @endforeach
-        @endforeach
-        
-        
-        
+        </tr>   
+                 
         @endforeach
       </tbody>
     </table> 

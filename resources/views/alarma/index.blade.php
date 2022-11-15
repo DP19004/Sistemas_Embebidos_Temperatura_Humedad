@@ -34,6 +34,7 @@
                     <th scope="col">HumMín</th>
                     <th scope="col">Importancia</th>
                     <th scope="col">Recom</th>
+                    <th scope="col">Zona asignada</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
@@ -47,6 +48,7 @@
                     <td>{{$alarma->humedadMin}}</td>
                     <td>{{$alarma->importancia}}</td>
                     <td>{{$alarma->recomendacion}}</td>
+                    <td>{{App\Models\Zona::find($alarma->id_Zona)->nombre}}</td>
                     <td>
                         <form action="{{ route ('alarmas.destroy',$alarma->id)}}" method="POST">
                             <a href="/alarmas/{{$alarma->id}}/edit" class="btn btn-info" title="Edita la alarma">

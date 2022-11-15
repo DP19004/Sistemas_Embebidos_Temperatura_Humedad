@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Alarma;
+use App\Models\Zona;
 
 class AlarmaController extends Controller
 {
@@ -40,7 +41,8 @@ class AlarmaController extends Controller
      */
     public function create()
     {
-        return view("alarma.create");
+        $Zonas=Zona::all(); 
+        return view("alarma.create")->with('Zonas',$Zonas);
     }
 
     /**
@@ -59,6 +61,7 @@ class AlarmaController extends Controller
         $alarmas->humedadMax = $request->get('humedadMax');
         $alarmas->humedadMin = $request->get('humedadMin');
         $alarmas->importancia = $request->get('importancia');
+        $alarmas->id_Zona = $request->get('zona');
         $alarmas->status = false;
         $alarmas->recomendacion = $request->get('recomendacion');
 
@@ -87,7 +90,8 @@ class AlarmaController extends Controller
     public function edit($id)
     {
         $alarma = Alarma::find($id);
-        return view('alarma.editarAlarma')->with('alarma', $alarma);
+        $Zonas=Zona::all(); 
+        return view('alarma.editarAlarma')->with('alarma', $alarma)->with('Zonas', $Zonas);
     }
 
     /**
@@ -107,6 +111,7 @@ class AlarmaController extends Controller
         $alarma->humedadMax = $request->get('humedadMax');
         $alarma->humedadMin = $request->get('humedadMin');
         $alarma->importancia = $request->get('importancia');
+        $alarma->id_Zona = $request->get('zona');
         $alarma->recomendacion = $request->get('recomendacion');
 
         $alarma->save();

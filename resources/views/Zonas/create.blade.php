@@ -62,21 +62,7 @@
                         <small style="color:rgb(202, 122, 2)">{{$mensaje}}</small>
                     @endif
 
-                </div>
-
-                <div class="mb-3">
-                    <label for="" class="form-label">Alarmas programables</label><br>
-                    <select class="form-control" aria-label="Default select example" id="id_Alarma" name='Id_Alarma' value="{{old('Id_Alarma')}}" tabindex="6" >
-                        <option selected></option>
-                        @foreach ($alarmas as $a)
-                        <option value="{{$a->id}}">{{$a->nombre}}</option>
-                        @endforeach
-                    </select>
-                    @error('Id_Alarma')
-                        <br>
-                        <small style="color:crimson">{{$message}}</small>
-                    @enderror
-                </div>
+                </div>               
                 <div class="mb-3">
                     <label for="" class="form-label">Cultivos Disponibles</label><br>
                     <select class="form-control" aria-label="Default select example" id="id_Cultivo" name='Id_Cultivo' value="{{old('Id_Cultivo')}}" tabindex="7" >

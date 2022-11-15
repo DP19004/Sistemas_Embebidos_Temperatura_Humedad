@@ -89,7 +89,6 @@ class ZonaController extends Controller
             'Longitud' => ['required', 'numeric', 'min:0'],
             'PeriodoDeRegistro' => ['required', 'numeric', 'min:0'],
             'Id_Kit' => ['required'],
-            'Id_Alarma' => ['required'],
             'Id_Cultivo' => ['required']
         ]);
         //
@@ -100,7 +99,6 @@ class ZonaController extends Controller
         $zonas->longitud = $request->get('Longitud');
         $zonas->periodoDeRegistro = $request->get('PeriodoDeRegistro');
         $zonas->id_Kit = $request->get('Id_Kit');
-        $zonas->id_Alarma = $request->get('Id_Alarma');
         $zonas->id_Cultivo = $request->get('Id_Cultivo');
         $sensor->status = 1;
         $sensor->save();
@@ -128,7 +126,7 @@ class ZonaController extends Controller
     public function edit($id)
     {
         $zona = Zona::find($id);
-        $kits = KitSensores::all();
+        $kits = KitSensores::where('status', '0')->get();
         $alarmas = Alarma::all();
         $cultivos = Cultivo::all();
 
@@ -157,7 +155,6 @@ class ZonaController extends Controller
             'Longitud' => ['required'],
             'PeriodoDeRegistro' => ['required'],
             'Id_Kit' => ['required'],
-            'Id_Alarma' => ['required'],
             'Id_Cultivo' => ['required']
         ]);
 
@@ -166,7 +163,6 @@ class ZonaController extends Controller
         $zona->longitud = $request->get('Longitud');
         $zona->periodoDeRegistro = $request->get('PeriodoDeRegistro');
         $zona->id_Kit = $request->get('Id_Kit');
-        $zona->id_Alarma = $request->get('Id_Alarma');
         $zona->id_Cultivo = $request->get('Id_Cultivo');
 
         $sensor->save();

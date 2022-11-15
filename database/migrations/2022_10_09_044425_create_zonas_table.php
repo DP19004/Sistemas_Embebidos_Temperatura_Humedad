@@ -27,9 +27,9 @@ return new class extends Migration
             ->on('kit_sensores')
           //->nullOnDelete()
             ->cascadeOnUpdate();
-            $table->foreignId('id_Alarma')->constrained('alarmas')
+            //$table->foreignId('id_Alarma')->constrained('alarmas')
             //->nullOnDelete()
-            ->cascadeOnUpdate();
+           // ->cascadeOnUpdate();
             $table->foreignId("id_Cultivo")->constrained("cultivos")
             //->nullOnDelete()
             ->cascadeOnUpdate();
