@@ -40,17 +40,21 @@
                     <div class="mb-3">
                         <label for="id_Alarma" class="form-label">Alarmas programables</label><br>
                         <select class="form-control" id="id_Alarma" name='Id_Alarma' require value="{{$zona->id_Alarma}}" tabindex="6" >
-                            <option selected>{{$zona->id_Alarma}}</option>
                             @foreach ($alarmas as $a)
-                            <option value="{{$a->id}}">{{$a->nombre}}</option>
+                            @if($a->id == $zona->id_Alarma)
+                            <option selected value="{{$a->id}}">{{$a->nombre}} (Actual)</option>
+                            @endif
+                            <option value="{{$a->id}}">{{$a->nombre}}</option> 
                             @endforeach
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="id_Cultivo" class="form-label">Cultivos Disponibles</label><br>
                         <select class="form-control" id="id_Cultivo" name='Id_Cultivo' require value="{{$zona->id_Cultivo}}" tabindex="7" >
-                            <option selected>{{$zona->id_Cultivo}}</option>
                             @foreach ($cultivos as $c)
+                            @if($c->id == $zona->id_Cultivo)
+                            <option selected value="{{$c->id}}">{{$c->nombre}} (Actual)</option>
+                            @endif
                             <option value="{{$c->id}}">{{$c->nombre}}</option>
                             @endforeach
                         </select>
