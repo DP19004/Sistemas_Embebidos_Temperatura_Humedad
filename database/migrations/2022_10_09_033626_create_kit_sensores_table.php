@@ -21,7 +21,7 @@ return new class extends Migration
             $table->boolean('status');
             
             $table->timestamps();
-            $table->foreignId('id_Reg')->constrained('registros')->cascadeOnUpdate();
+            //$table->foreignId('id_Reg')->constrained('registros')->cascadeOnUpdate();
         });
     }
 

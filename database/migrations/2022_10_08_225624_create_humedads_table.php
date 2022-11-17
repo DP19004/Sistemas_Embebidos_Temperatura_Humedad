@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('humedads', function (Blueprint $table) {
             $table->id();
             $table->double('valor');
-            $table->foreignId('id_Reg')->constrained('registros')->cascadeOnUpdate();
+            //$table->foreignId('id_Reg')->constrained('registros')->cascadeOnUpdate();
             $table->timestamps();
         });
     }
