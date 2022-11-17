@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->id();
+
             $table->date('fecha');
             $table->time('hora');
+            $table->foreignId('id_Temp')->constrained('temperaturas')->cascadeOnUpdate();
+            $table->foreignId('id_Hum')->constrained('humedads')->cascadeOnUpdate();
+            $table->foreignId('id_Kit')->constrained('kit_sensores')->cascadeOnUpdate();
             $table->timestamps();
         });
     }
