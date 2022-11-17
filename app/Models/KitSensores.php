@@ -14,6 +14,7 @@ class KitSensores extends Model
         return $this->hasOne(Zona::class,'id');
 
     }
+    
     //relacion uno a muchos (inversa) 
     public function Registro(){
         return $this->belongsTo('App\Models\Registro');
