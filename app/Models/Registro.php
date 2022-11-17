@@ -12,4 +12,5 @@ class Registro extends Model
     public function Kits(){
         return $this->hasMany('App\Models\KitSensores');
     }
+    
 }
