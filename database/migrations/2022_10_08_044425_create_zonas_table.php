@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('zonas', function (Blueprint $table) {
             $table->id();
             $table->String('nombre',100);
-            $table->double('latitud');
-            $table->double('longitud');
-            $table->double('periodoDeRegistro');
+            $table->double('latitud')->nullable();
+            $table->double('longitud')->nullable();
+            $table->double('periodoDeRegistro')->nullable();
             $table->timestamps();
 
-            $table->unsignedBigInteger('id_Kit')->unique();
+            $table->unsignedBigInteger('id_Kit')->unique()->nullable();
 
             $table->foreign('id_Kit')->references('id')->on('kit_sensores')
           //->nullOnDelete()
@@ -29,7 +29,8 @@ return new class extends Migration
             //$table->foreignId('id_Alarma')->constrained('alarmas')
             //->nullOnDelete()
            // ->cascadeOnUpdate();
-            $table->foreignId("id_Cultivo")->constrained("cultivos")
+           $table->unsignedBigInteger('id_Cultivo')->unique()->nullable();
+            $table->foreign("id_Cultivo")->references('id')->on('cultivos')
             //->nullOnDelete()
             ->cascadeOnUpdate();
         });

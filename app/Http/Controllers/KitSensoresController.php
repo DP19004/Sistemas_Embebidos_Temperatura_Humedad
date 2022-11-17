@@ -56,7 +56,7 @@ class KitSensoresController extends Controller
         $kitSensores->serialHumedad = $request->get('serialHumedad');
         $kitSensores->serialTemperatura = $request->get('serialTemperatura');
         $kitSensores->fechaColocacion = $request->get('fechaColocacion');
-        $kitSensores->status = false;
+        $kitSensores->status=false;        
         $kitSensores->save();
 
         return redirect('/kitSensores');
@@ -101,7 +101,6 @@ class KitSensoresController extends Controller
         $kitSensor->serialHumedad = $request->get('serialHumedad');
         $kitSensor->serialTemperatura = $request->get('serialTemperatura');
         $kitSensor->fechaColocacion = $request->get('fechaColocacion');
-
         $kitSensor->save();
 
         return redirect('/kitSensores');

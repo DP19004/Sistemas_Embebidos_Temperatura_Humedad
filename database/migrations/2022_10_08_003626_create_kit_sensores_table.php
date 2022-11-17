@@ -17,9 +17,8 @@ return new class extends Migration
             $table->id();
             $table->Integer('serialHumedad');
             $table->Integer('serialTemperatura');
-            $table->date('fechaColocacion');
-            $table->boolean('status');
-            
+            $table->date('fechaColocacion'); 
+            $table->boolean('status');        
             $table->timestamps();
             //$table->foreignId('id_Reg')->constrained('registros')->cascadeOnUpdate();
         });

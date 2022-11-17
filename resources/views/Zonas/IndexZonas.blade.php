@@ -36,7 +36,7 @@
           <th scope="col">Longitud</th>
           <th scope="col">Periodo de registro</th>
           <th scope="col">Kit de Sensores</th>
-          <th scope="col">Cultivos</th>
+         <!--<th scope="col">Cultivos</th>  COLUMNA QUE SOLO SIRVE CON DATOS REALES -->
           <th scope="col">Total de alarmas</th>
           <th scope="col">Acciones</th>
         </tr>
@@ -50,7 +50,7 @@
           <td>{{$zona->longitud}}</td>
           <td>{{$zona->periodoDeRegistro}}</td>
           <td>{{$zona->id_Kit}}</td>
-          <td>{{App\Models\Cultivo::find($zona->id_Cultivo)->nombre}}</td>
+          
           <td>{{App\Models\Alarma::where('id_Zona',$zona->id)->count()}}</td>
           <td>
             <form action="{{route('Zonas.destroy',$zona->id)}}" method="POST">

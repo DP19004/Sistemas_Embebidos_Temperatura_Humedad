@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('temperaturas', function (Blueprint $table) {
             $table->id();
             $table->double('valor');
+            $table->unsignedBigInteger('id_Zona')->nullable();
+            $table->foreign('id_Zona')->references('id')->on('zonas')->cascadeOnUpdate();
             //$table->foreignId('id_Reg')->constrained('registros')->cascadeOnUpdate();
             $table->timestamps();
         });
