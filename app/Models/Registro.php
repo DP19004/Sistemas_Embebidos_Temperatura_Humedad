@@ -12,6 +12,7 @@ class Registro extends Model
     public function Kits(){
         return $this->hasMany('App\Models\KitSensores');
     }
+<<<<<<< HEAD
 
     //relacion uno a uno (un Registro tiene una Humedad)
     public function Humedad(){
@@ -22,4 +23,7 @@ class Registro extends Model
     public function Temperatura(){
         return $this->hasOne('App\Models\Temperatura');
     }
+=======
+    
+>>>>>>> a3a1b00019792b724bb1961dc97d48c7a6ffca84
 }
