@@ -18,9 +18,9 @@ return new class extends Migration
 
             $table->date('fecha');
             $table->time('hora');
-            //$table->foreignId('id_Temp')->constrained('temperaturas')->cascadeOnUpdate();
-            //$table->foreignId('id_Hum')->constrained('humedads')->cascadeOnUpdate();
-            //$table->foreignId('id_Kit')->constrained('kit_sensores')->cascadeOnUpdate();
+            $table->unsignedBigInteger('id_Kit')->nullable();
+
+            $table->foreign('id_Kit')->references('id')->on('kit_sensores')->cascadeOnUpdate();
             $table->timestamps();
         });
     }

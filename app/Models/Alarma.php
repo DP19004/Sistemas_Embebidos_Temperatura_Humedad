@@ -10,7 +10,7 @@ class Alarma extends Model
     use HasFactory;
     protected $fillable=['nombre', 'temperaturaMax', 'temperaturaMin','humedadMax','humedadMin','importancia','status','recomendacion','id_Zona'];
     use HasFactory;
-
+    //relacion uno a muchos
     public function Zonas(){
         return $this->hasMany(Zona::class,'id_Zona', 'id');
     }

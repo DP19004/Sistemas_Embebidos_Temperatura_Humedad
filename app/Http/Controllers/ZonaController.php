@@ -57,7 +57,7 @@ class ZonaController extends Controller
             $puntos[] = ['name'=>$z['nombre'], 'y'=>floatval($z['latitud'])];
         }
         */
-        return view('Zonas.indexZonas',compact('chart'))
+        return view('Zonas.indexZonas',/*compact('chart')*/)
             ->with('zonas', $zonas)
             //->with(['data'=> json_encode($puntos)])
             ->with('alarmas', $alarmas)
