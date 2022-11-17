@@ -19,8 +19,12 @@ return new class extends Migration
             $table->date('fecha');
             $table->time('hora');
             $table->unsignedBigInteger('id_Kit')->nullable();
+            $table->unsignedBigInteger('id_Temp')->nullable()->unique();
+            $table->unsignedBigInteger('id_Hum')->nullable()->unique();
 
             $table->foreign('id_Kit')->references('id')->on('kit_sensores')->cascadeOnUpdate();
+            $table->foreign('id_Temp')->references('id')->on('temperaturas')->cascadeOnUpdate();
+            $table->foreign('id_Hum')->references('id')->on('humedads')->cascadeOnUpdate();
             $table->timestamps();
         });
     }

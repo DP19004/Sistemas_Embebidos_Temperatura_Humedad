@@ -9,4 +9,9 @@ class Temperatura extends Model
 {
     use HasFactory;
     //protected $fillable = ['valor'];
+
+    //relacion uno a uno (Temperatura se encuentra en un Registro)
+    public function Registro(){
+        return $this->hasOne('App\Models\Registro');
+    }
 }

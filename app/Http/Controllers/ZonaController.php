@@ -7,7 +7,7 @@ use App\Models\Zona;
 use App\Models\KitSensores;
 use App\Models\Alarma;
 use App\Models\Cultivo;
-use LaravelDaily\LaravelCharts\Classes\LaravelChart;
+//use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 class ZonaController extends Controller
 {
@@ -35,10 +35,10 @@ class ZonaController extends Controller
         $cultivos = Cultivo::all();
 
         // para crear la data necesaria para los graficos, no parece presentar errores esta parte
-        
+
 
         // ...
-        
+
         $chart_options = [
             'chart_title' => 'Zonas',
             'report_type' => 'group_by_date',
@@ -48,9 +48,9 @@ class ZonaController extends Controller
             'chart_type' => 'bar',
         ];
 
-        $chart = new LaravelChart($chart_options);
-        
-        
+        //$chart = new LaravelChart($chart_options);
+
+
         /*
         $puntos = [];
         foreach($zonas as $z){
@@ -73,7 +73,7 @@ class ZonaController extends Controller
     {
         $zonas = Zona::all();
         $kits = KitSensores::where('status', '0')->get();
-        
+
         $alarmas = Alarma::all();
         $cultivos = Cultivo::all();
         $i = 0;
