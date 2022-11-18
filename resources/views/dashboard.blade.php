@@ -9,19 +9,13 @@
       //Echo "$x";
     ?>
 
-    <div>
-        <canvas id="myChart"></canvas>
-    </div>
-
-    @foreach($alarmas as $alarma)
+@foreach($alarmas as $alarma)
     @if($alarma->status==1)
     <p> <?php $alarma_importancia = $alarma->importancia ?></p>
     <p> <?php $alarma_nombre = $alarma->nombre ?></p>
-    <p> <?php $alarma_id = $alarma->id ?></p>
-
+    <p> <?php $alarma_id_zona = $alarma->id_Zona ?></p>
         @foreach($zonas as $zona)
-        @if($zona->id_Alarma == $alarma_id)
-
+        @if($zona->id == $alarma_id_zona)
         <p> <?php $zona_nombre = $zona->nombre ?></p>
         <p> <?php $zona_id_Cultivo = $zona->id_Cultivo ?></p>
         @foreach($cultivos as $cultivo)
@@ -82,8 +76,14 @@
     @endif
     @endforeach
 
+
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
     @section('js')
-    
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
