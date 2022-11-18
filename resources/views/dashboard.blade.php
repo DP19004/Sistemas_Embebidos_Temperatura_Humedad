@@ -3,11 +3,15 @@
 @section('content')
 
     <h1>Dashboard vista admin</h1>
-    
+
     <?php
       $x = shell_exec('php C:\users\Personal\Documents\GitHub\Sistemas_Embebidos_Temperatura_Humedad\artisan schedule:run');
       //Echo "$x";
     ?>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
 
     @foreach($alarmas as $alarma)
     @if($alarma->status==1)
@@ -77,5 +81,33 @@
 
     @endif
     @endforeach
+
+    @section('js')
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+      </script>
+      @endsection
 
 @endsection
