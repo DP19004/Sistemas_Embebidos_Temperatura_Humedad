@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Zona;
+use App\Models\cultivo;
+use App\Models\KitSensores;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -86,5 +88,29 @@ class TodosSeeder extends Seeder
         ]);
         $Zona->save();
 
+
+        //pruebas
+        $cult=cultivo::create([
+            'nombre'=>'tomate',
+            'TemperaturaMaxima'=>'50',
+            'TemperaturaMinima'=>'40',
+            'HumedadMaxima'=>'40',
+            'HumedadMinima'=>'12',
+            'status'=>'0',
+
+        ]);
+        $cult->save();
+
+        $cult=cultivo::create([
+            'nombre'=>'papa',
+            'TemperaturaMaxima'=>'30',
+            'TemperaturaMinima'=>'10',
+            'HumedadMaxima'=>'40',
+            'HumedadMinima'=>'12',
+            'status'=>'0',
+
+        ]);
+        $cult->save();
+        
     }
 }

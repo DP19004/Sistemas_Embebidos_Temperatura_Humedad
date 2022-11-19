@@ -25,14 +25,16 @@ return new class extends Migration
 
             $table->foreign('id_Kit')->references('id')->on('kit_sensores')
           //->nullOnDelete()
-            ->cascadeOnUpdate();
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
             //$table->foreignId('id_Alarma')->constrained('alarmas')
             //->nullOnDelete()
            // ->cascadeOnUpdate();
            $table->unsignedBigInteger('id_Cultivo')->nullable();
             $table->foreign("id_Cultivo")->references('id')->on('cultivos')
             //->nullOnDelete()
-            ->cascadeOnUpdate();
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
             $table->boolean('editado');
 
         });

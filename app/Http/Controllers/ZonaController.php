@@ -202,13 +202,18 @@ class ZonaController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     * 
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $zona = Zona::find($id);
+        
+        $sensor = KitSensores::find($zona->id_Kit);
+        $sensor->status = '0';
+        $sensor->save();
         $zona->delete();
         return redirect('/Zonas');
     }
