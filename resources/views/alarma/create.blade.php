@@ -45,10 +45,9 @@
                     <select class="form-control"  aria-label="Default select example" id="zona" name='zona' tabindex="6" required>
                         <option selected></option>
                         @foreach ($Zonas as $zona)
-                        @if ($zona->editado==1)
-                            <option value={{$zona->id}}>{{$zona->nombre}}</option>
-                        @endif
-
+                            @if ($zona->editado==1)
+                                <option value={{$zona->id}}>{{$zona->nombre}}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>

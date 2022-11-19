@@ -45,8 +45,10 @@
                     <label for="" class="form-label">Zona asignada</label><br>
                     <select class="form-control"  aria-label="Default select example" id="zona" name='zona' tabindex="6" required>
                         @foreach ($Zonas as $zona)
-                        <option  value={{$zona->id}} selected>{{App\Models\Zona::find($alarma->id_Zona)->nombre}}</option>
-                        <option value={{$zona->id}}>{{$zona->nombre}}</option>
+                            @if ($zona->editado==1)
+                                <option  value={{$zona->id}} selected>{{App\Models\Zona::find($alarma->id_Zona)->nombre}}</option>
+                                <option value={{$zona->id}}>{{$zona->nombre}}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
@@ -56,7 +58,7 @@
                 </div>
                 <!-- Botones -->
                 <div class="text-center">
-                <button type="submit" class="btn btn-primary" tabindex="8">Editar</button>
+                    <button type="submit" class="btn btn-primary" tabindex="8">Editar</button>
                     <a href="/alarmas" class="btn btn-secondary" tabindex="9">Cancelar</a>
                 </div>
                 </form>

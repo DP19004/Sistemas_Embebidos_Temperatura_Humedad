@@ -33,8 +33,8 @@
                         <input type="number" class="form-control" name="humedadMin" required min="0"  step="0.01" value="{{$cultivo->HumedadMinima}}">
                     </div>
                     <!-- Botones -->
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Registrar">
+                    <div class="form-group text-center">
+                        <input type="submit" class="btn btn-primary" value="Editar">
                         <a href="/cultivos" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form>
