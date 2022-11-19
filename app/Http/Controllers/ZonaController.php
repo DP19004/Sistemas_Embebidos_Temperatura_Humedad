@@ -128,6 +128,7 @@ class ZonaController extends Controller
                 $sensor->status = 1;
                 $sensor->save();
                 $zona->save();
+                return redirect('/Zonas');
             }
     }
     return redirect('/Zonas');
