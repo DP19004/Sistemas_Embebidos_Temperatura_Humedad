@@ -18,7 +18,7 @@
 <div class="p-5">
     <br>
     <span class="tt" data-bs-placement="bottom" title="Agrega una nuevo cultivo">
-        <a href="cultivos/create" class="btn btn-primary">Nuevo</a>
+        <a href="cultivos/create" class="btn btn-primary">CREAR</a>
     </span>
 
     <br> <br>

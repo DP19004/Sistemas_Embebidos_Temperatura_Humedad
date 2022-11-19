@@ -1,5 +1,4 @@
 @extends('adminlte::page')
-
 @section('title', 'Editar | Kit de Sensores')
 @section('content')
 
@@ -27,7 +26,7 @@
                     <!--botones-->
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Editar</button>
-                        <a href="/kitSensor" class="btn btn-secondary">Cancelar</a>
+                        <a href="/kitSensores" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form>
             </div>
