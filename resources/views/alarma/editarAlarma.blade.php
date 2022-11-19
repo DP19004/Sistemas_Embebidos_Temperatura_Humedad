@@ -1,7 +1,7 @@
-@extends('adminlte::page') 
+@extends('adminlte::page')
 
 @section('title', 'Editar | Cultivo')
-@section('content') 
+@section('content')
 
 <!-- Card -->
 <div class="d-flex">
@@ -10,7 +10,7 @@
             <div class="card-body">
                 <!-- Formulario -->
                 <form action="/alarmas/{{$alarma->id}}" method="POST">
-                @csrf    
+                @csrf
                 @method('PUT')
                 <div class="mb-3">
                     <label for="nombre">Nombre</label>
@@ -44,10 +44,10 @@
                 <div class="mb-3">
                     <label for="" class="form-label">Zona asignada</label><br>
                     <select class="form-control"  aria-label="Default select example" id="zona" name='zona' tabindex="6" required>
-                        <option  value={{$zona->id}} selected>{{App\Models\Zona::find($alarma->id_Zona)->nombre}}</option>
                         @foreach ($Zonas as $zona)
+                        <option  value={{$zona->id}} selected>{{App\Models\Zona::find($alarma->id_Zona)->nombre}}</option>
                         <option value={{$zona->id}}>{{$zona->nombre}}</option>
-                        @endforeach                     
+                        @endforeach
                     </select>
                 </div>
                 <div class="mb-3">

@@ -112,18 +112,26 @@ class ZonaController extends Controller
             'Id_Cultivo' => ['required']
         ]);
         //
-        $zonas = new Zona();
-        $zonas->id = $request->get('id');
-        $zonas->nombre = $request->get('Nombre');
-        $zonas->latitud = $request->get('Latitud');
-        $zonas->longitud = $request->get('Longitud');
-        $zonas->periodoDeRegistro = $request->get('PeriodoDeRegistro');
-        $zonas->id_Kit = $request->get('Id_Kit');
-        $zonas->id_Cultivo = $request->get('Id_Cultivo');
-        $sensor->status = 1;
-        $sensor->save();
-        $zonas->save();
-        return redirect('/Zonas');
+        $zonas_edit = Zona::where('editado', '0')->get();
+        foreach($zonas_edit as $zona_edit)
+        {
+            if($zona_edit->editado==0)
+            {
+                $zona = Zona::find($zona_edit->id);
+                $zona->nombre = $request->get('Nombre');
+                $zona->latitud = $request->get('Latitud');
+                $zona->longitud = $request->get('Longitud');
+                $zona->periodoDeRegistro = $request->get('PeriodoDeRegistro');
+                $zona->id_Kit = $request->get('Id_Kit');
+                $zona->id_Cultivo = $request->get('Id_Cultivo');
+                $zona->editado= 1;
+                $sensor->status = 1;
+                $sensor->save();
+                $zona->save();
+            }
+    }
+    return redirect('/Zonas');
+
     }
 
     /**

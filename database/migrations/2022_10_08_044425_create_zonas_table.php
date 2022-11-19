@@ -29,10 +29,12 @@ return new class extends Migration
             //$table->foreignId('id_Alarma')->constrained('alarmas')
             //->nullOnDelete()
            // ->cascadeOnUpdate();
-           $table->unsignedBigInteger('id_Cultivo')->unique()->nullable();
+           $table->unsignedBigInteger('id_Cultivo')->nullable();
             $table->foreign("id_Cultivo")->references('id')->on('cultivos')
             //->nullOnDelete()
             ->cascadeOnUpdate();
+            $table->boolean('editado');
+
         });
     }
 

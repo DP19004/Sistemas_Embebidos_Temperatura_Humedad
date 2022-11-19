@@ -26,11 +26,11 @@
                     </div>
                     <div class="form-group">
                         <label for="humedadMax">Humedad Maxima</label>
-                        <input type="number" class="form-control" name="humedadMax" required min="0" max="1" step="0.01" value="{{$cultivo->HumedadMaxima}}">
+                        <input type="number" class="form-control" name="humedadMax" required min="0"  step="0.01" value="{{$cultivo->HumedadMaxima}}">
                     </div>
                     <div class="form-group">
                         <label for="humedadMin">Humedad Minima</label>
-                        <input type="number" class="form-control" name="humedadMin" required min="0" max="1" step="0.01" value="{{$cultivo->HumedadMinima}}">
+                        <input type="number" class="form-control" name="humedadMin" required min="0"  step="0.01" value="{{$cultivo->HumedadMinima}}">
                     </div>
                     <!-- Botones -->
                     <div class="form-group">

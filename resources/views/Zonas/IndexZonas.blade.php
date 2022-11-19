@@ -11,7 +11,7 @@
       text-align: center;
       box-shadow: 0px 0px 15px #454545;
       -moz-box-shadow: 0px 0px 15px #454545;
-      filter: progid:DXImageTransform.Microsoft.Shadow(color='#454545', Direction=135, Strength=4);    
+      filter: progid:DXImageTransform.Microsoft.Shadow(color='#454545', Direction=135, Strength=4);
     }
 </style>
 
@@ -42,15 +42,17 @@
         </tr>
         </thead>
       <tbody>
-        @foreach ($zonas as $zona)     
-        
+        @foreach ($zonas as $zona)
+        @if ($zona->editado==1)
+
+
         <tr>
           <td>{{$zona->nombre}}</td>
           <td>{{$zona->latitud}}</td>
           <td>{{$zona->longitud}}</td>
           <td>{{$zona->periodoDeRegistro}}</td>
           <td>{{$zona->id_Kit}}</td>
-          
+
           <td>{{App\Models\Alarma::where('id_Zona',$zona->id)->count()}}</td>
           <td>
             <form action="{{route('Zonas.destroy',$zona->id)}}" method="POST">
@@ -68,11 +70,11 @@
               </button>
             </form>
           </td>
-        </tr>   
-                 
+        </tr>
+        @endif
         @endforeach
       </tbody>
-    </table> 
+    </table>
   </div>
 </div>
 </div>
@@ -81,7 +83,7 @@
 </div>
 </div>
 
-{{-- 
+{{--
 @extends('layouts.app')
 
 @section('content')
@@ -110,7 +112,7 @@
 @endsection --}}
 
 {{-- Aqui intente crear un grafico pero creo que el problema esta en que no detecta la libreria desde esta vista
-  tendria que insertarlo en el adminlte o algo asi 
+  tendria que insertarlo en el adminlte o algo asi
   <div>
   Highcharts.chart('container', {
     chart: {
@@ -164,6 +166,6 @@
         }
     ],
   });
-              
+
 </div> --}}
 @endsection

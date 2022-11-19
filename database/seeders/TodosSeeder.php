@@ -32,48 +32,59 @@ class TodosSeeder extends Seeder
             'password' => Hash::make('viewer'),
             'fullacces' => 'no',
         ]);
-        $userviewer->save();        
+        $userviewer->save();
 
         $Zona=Zona::create([
-            'nombre'=>'p1',                      
+            'nombre'=>'p1',
+            'editado'=>'0',
         ]);
-        $Zona->save();     
+        $Zona->save();
         $Zona=Zona::create([
-            'nombre'=>'p2',                      
+            'nombre'=>'p2',
+            'editado'=>'0',
         ]);
-        $Zona->save();  
+        $Zona->save();
         $Zona=Zona::create([
-            'nombre'=>'p3',                      
+            'nombre'=>'p3',
+            'editado'=>'0',
         ]);
-        $Zona->save();  
+        $Zona->save();
         $Zona=Zona::create([
-            'nombre'=>'p4',                      
+            'nombre'=>'p4',
+            'editado'=>'0',
         ]);
-        $Zona->save();  
+        $Zona->save();
         $Zona=Zona::create([
-            'nombre'=>'p5',                      
+            'nombre'=>'p5',
+            'editado'=>'0',
         ]);
-        $Zona->save();  
+        $Zona->save();
         $Zona=Zona::create([
-            'nombre'=>'p6',                      
+            'nombre'=>'p6',
+            'editado'=>'0',
         ]);
-        $Zona->save();  
+        $Zona->save();
         $Zona=Zona::create([
-            'nombre'=>'p7',                      
+            'nombre'=>'p7',
+            'editado'=>'0',
         ]);
-        $Zona->save();  
+        $Zona->save();
         $Zona=Zona::create([
-            'nombre'=>'p8',                      
+            'nombre'=>'p8',
+            'editado'=>'0',
         ]);
-        $Zona->save();  
+        $Zona->save();
         $Zona=Zona::create([
-            'nombre'=>'p9',                      
+            'nombre'=>'p9',
+            'editado'=>'0',
+
         ]);
-        $Zona->save();  
+        $Zona->save();
         $Zona=Zona::create([
-            'nombre'=>'p10',                      
+            'nombre'=>'p10',
+            'editado'=>'0',
         ]);
-        $Zona->save();               
+        $Zona->save();
 
     }
 }
