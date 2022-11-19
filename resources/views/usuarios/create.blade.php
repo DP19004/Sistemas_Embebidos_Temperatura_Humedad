@@ -1,6 +1,5 @@
 @extends('adminlte::page')
-
-@section('title', 'Usuarios | Registrar')
+@section('title', 'Registrar | Usuarios')
 @section('content')
 
 <!-- Card -->

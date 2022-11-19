@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Kit de Sensores|Registrar')
+@section('title', 'Registrar | Kit de Sensores')
 @section('content')
 
 <!-- Card -->

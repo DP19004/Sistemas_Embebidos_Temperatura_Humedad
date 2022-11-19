@@ -1,6 +1,5 @@
 @extends('adminlte::page')
-
-@section('title', 'Usuarios | Editar')
+@section('title', 'Editar | Usuarios')
 @section('content')
 
 <div class="mx-auto" style="width:600px;">

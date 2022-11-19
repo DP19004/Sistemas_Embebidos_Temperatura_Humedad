@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Alarma | Agregar')
+@section('title', 'Registrar | Alarmas')
 @section('content')
 
 <!-- Card -->

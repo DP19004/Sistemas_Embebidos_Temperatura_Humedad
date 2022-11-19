@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Registrar | Zonas')
 @section('content')
 
 <!-- Card -->
@@ -62,7 +62,7 @@
                         <small style="color:rgb(202, 122, 2)">{{$mensaje}}</small>
                     @endif
 
-                </div>               
+                </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Cultivos Disponibles</label><br>
                     <select class="form-control" aria-label="Default select example" id="id_Cultivo" name='Id_Cultivo' value="{{old('Id_Cultivo')}}" tabindex="7" >

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar | Cultivo')
+@section('title', 'Editar | Cultivos')
 @section('content')
 
 <!-- Card -->

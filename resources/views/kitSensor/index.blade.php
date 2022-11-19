@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'Gestionar | Kit Sensores')
+@section('title', 'Gestionar | Kit de Sensores')
 @section('content')
 
 <!---aca mi codigo-->
@@ -8,7 +8,7 @@
       text-align: center;
       box-shadow: 0px 0px 15px #454545;
       -moz-box-shadow: 0px 0px 15px #454545;
-      filter: progid:DXImageTransform.Microsoft.Shadow(color='#454545', Direction=135, Strength=4);    
+      filter: progid:DXImageTransform.Microsoft.Shadow(color='#454545', Direction=135, Strength=4);
     }
 </style>
 

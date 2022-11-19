@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Kit de Sensores|Editar')
+@section('title', 'Editar | Kit de Sensores')
 @section('content')
 
 <!-- Card -->
@@ -10,7 +10,7 @@
             <div class="card-body">
                 <!-- Formulario -->
                 <form action="/kitSensores/{{$kitSensor->id}}" method="POST">
-                    @csrf    
+                    @csrf
                     @method('PUT')
                     <div class="mb-3">
                         <label for="" class="form-label">Serial de Humedad</label>

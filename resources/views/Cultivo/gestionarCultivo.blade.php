@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title','Gestionar | Cultivo')
+@section('title','Gestionar | Cultivos')
 @section('content')
 
 <style>
