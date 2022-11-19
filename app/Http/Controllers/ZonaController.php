@@ -102,6 +102,7 @@ class ZonaController extends Controller
      */
     public function store(Request $request)
     {
+        $cultivo = Cultivo::find($request->get('Id_Cultivo'));
         $sensor = KitSensores::find($request->get('Id_Kit'));
         $request->validate([
             'Nombre' => ['required'],
@@ -113,6 +114,7 @@ class ZonaController extends Controller
         ]);
         //
         $zonas_edit = Zona::where('editado', '0')->get();
+
         foreach($zonas_edit as $zona_edit)
         {
             if($zona_edit->editado==0)
@@ -126,7 +128,9 @@ class ZonaController extends Controller
                 $zona->id_Cultivo = $request->get('Id_Cultivo');
                 $zona->editado= 1;
                 $sensor->status = 1;
+                $cultivo->status ='1';
                 $sensor->save();
+                $cultivo->save();
                 $zona->save();
                 return redirect('/Zonas');
             }
@@ -177,7 +181,7 @@ class ZonaController extends Controller
     {
         $zona = Zona::find($id);
         $sensor = KitSensores::find($request->get('Id_Kit'));
-
+        $cultivo = Cultivo::find($request->get('Id_Cultivo'));
         $request->validate([
             'Nombre' => ['required'],
             'Latitud' => ['required'],
@@ -193,10 +197,10 @@ class ZonaController extends Controller
         $zona->periodoDeRegistro = $request->get('PeriodoDeRegistro');
         $zona->id_Kit = $request->get('Id_Kit');
         $zona->id_Cultivo = $request->get('Id_Cultivo');
-
+        $cultivo->status = '1';
         $sensor->save();
         $zona->save();
-
+        $cultivo->save();
         return redirect('/Zonas');
     }
 

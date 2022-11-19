@@ -56,7 +56,7 @@ class CultivoController extends Controller
         $cultivos->TemperaturaMinima = $request->get('temperaturaMin');
         $cultivos->HumedadMaxima = $request->get('humedadMax');
         $cultivos->HumedadMinima = $request->get('humedadMin');
-        $cultivos->status =false;
+        $cultivos->status = false;
         $cultivos->save();
 
         return redirect('/cultivos');
@@ -101,7 +101,6 @@ class CultivoController extends Controller
         $cultivo->TemperaturaMinima = $request->get('temperaturaMin');
         $cultivo->HumedadMaxima = $request->get('humedadMax');
         $cultivo->HumedadMinima = $request->get('humedadMin');
-
         $cultivo->save();
 
         return redirect('/cultivos');
@@ -116,7 +115,14 @@ class CultivoController extends Controller
     public function destroy($id)
     {
         $cultivo = Cultivo::find($id);
-        $cultivo->delete();
+
+        if($cultivo->status == '0'){
+            $cultivo->delete();
+        }
+        else{
+
+        }
+
         return redirect('/cultivos');
     }
 }

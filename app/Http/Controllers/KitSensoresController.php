@@ -115,7 +115,12 @@ class KitSensoresController extends Controller
     public function destroy($id)
     {
         $kitSensor = KitSensores::find($id);
-        $kitSensor->delete();
+        if($kitSensor->status == '0'){
+            $kitSensor->delete();
+        }
+        else{}
+        
+        
         return redirect('/kitSensores');
     }
 }
