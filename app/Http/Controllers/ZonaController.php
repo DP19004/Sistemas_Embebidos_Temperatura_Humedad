@@ -203,7 +203,7 @@ class ZonaController extends Controller
     /**
      * Remove the specified resource from storage.
      * 
-     * @param  \Illuminate\Http\Request  $request
+     * 
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
