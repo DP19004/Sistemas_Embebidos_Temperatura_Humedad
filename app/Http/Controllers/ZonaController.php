@@ -36,18 +36,6 @@ class ZonaController extends Controller
 
         // para crear la data necesaria para los graficos, no parece presentar errores esta parte
 
-
-        // ...
-
-        $chart_options = [
-            'chart_title' => 'Zonas',
-            'report_type' => 'group_by_date',
-            'model' => 'App\Models\User',
-            'group_by_field' => 'created_at',
-            'group_by_period' => 'month',
-            'chart_type' => 'bar',
-        ];
-
         //$chart = new LaravelChart($chart_options);
 
 

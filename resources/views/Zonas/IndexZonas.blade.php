@@ -162,7 +162,7 @@
         {
             name: "Browsers",
             colorByPoint: true,
-            data: <? = $data ?>
+            data: <?  $data ?>
         }
     ],
   });
