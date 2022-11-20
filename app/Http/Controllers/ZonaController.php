@@ -128,7 +128,7 @@ class ZonaController extends Controller
                 $zona->id_Cultivo = $request->get('Id_Cultivo');
                 $zona->editado= 1;
                 $sensor->status = 1;
-                $cultivo->status ='1';
+                $cultivo->status =1;
                 $sensor->save();
                 $cultivo->save();
                 $zona->save();
@@ -181,7 +181,10 @@ class ZonaController extends Controller
     {
         $zona = Zona::find($id);
         $sensor = KitSensores::find($request->get('Id_Kit'));
+        $sp =KitSensores::all();
         $cultivo = Cultivo::find($request->get('Id_Cultivo'));
+        $cp= cultivo::all();
+
         $request->validate([
             'Nombre' => ['required'],
             'Latitud' => ['required'],
@@ -191,13 +194,37 @@ class ZonaController extends Controller
             'Id_Cultivo' => ['required']
         ]);
 
+
+        foreach($sp as $s){
+            if($sensor->id == $s->id){
+                $s->status ='1';
+                $s->save();
+            }
+            else{
+                $s->status ='0';
+                $s->save();
+            }
+        }
+        foreach($cp as $c){
+            if($cultivo->id== $c->id){
+                $c->status ='1';
+                $c->save();
+            }
+            else{
+                $c->status ='0';
+                $c->save();
+            }
+        }
+
+
         $zona->nombre = $request->get('Nombre');
         $zona->latitud = $request->get('Latitud');
         $zona->longitud = $request->get('Longitud');
         $zona->periodoDeRegistro = $request->get('PeriodoDeRegistro');
         $zona->id_Kit = $request->get('Id_Kit');
         $zona->id_Cultivo = $request->get('Id_Cultivo');
-        $cultivo->status = '1';
+        $cultivo->status ='1';
+        $sensor->status ='1';
         $sensor->save();
         $zona->save();
         $cultivo->save();
@@ -214,9 +241,12 @@ class ZonaController extends Controller
     public function destroy($id)
     {
         $zona = Zona::find($id);
-        
+        $cultivo = Cultivo:: find($zona->id_Cultivo);
         $sensor = KitSensores::find($zona->id_Kit);
         $sensor->status = '0';
+        $cultivo->status='0';
+
+        $cultivo->save();
         $sensor->save();
         $zona->delete();
         return redirect('/Zonas');
