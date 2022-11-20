@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class TemperaturaController extends Controller
 {
+    /*
+     * charts
+     */
+    public function chartTemp()
+    {
+        $temps = Temperatura::all();
+
+        $puntos = [];
+        foreach($temps as $temp) {
+            $puntos[] = ['name' => intval($temp['id']), 'y' => doubleval($temp['valor'])];
+        }
+        return view("dashboard", ["data" => json_encode($puntos)]);
+    }
 
     /**
      * create a new controller instance
@@ -53,7 +66,7 @@ class TemperaturaController extends Controller
         $temps->save();
         return redirect('/dashboard');
         */
-        
+
     }
 
     /**

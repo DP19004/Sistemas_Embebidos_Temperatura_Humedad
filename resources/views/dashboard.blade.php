@@ -78,8 +78,11 @@
 
 
 
-    <div>
-        <canvas id="myChart"></canvas>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="text-center">Zona 1</h3>
+            <canvas id="zona1"></canvas>
+        </div>
     </div>
 
     @section('js')
@@ -87,16 +90,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        const ctx = document.getElementById('myChart');
+        const ctx = document.getElementById('zona1');
 
         new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
+                    label: 'Temperatura',
+                    data: <?= $data ?>,
+                    borderWidth: 1
+                }, {
+                    label: 'Humedad',
+                    data: [10, 17, 3, 7, 2, 5],
+                    borderWidth: 1
                 }]
             },
             options: {
@@ -107,7 +114,7 @@
                 }
             }
         });
-      </script>
+    </script>
       @endsection
 
 @endsection
