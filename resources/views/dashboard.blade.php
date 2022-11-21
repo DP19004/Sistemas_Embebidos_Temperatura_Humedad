@@ -98,7 +98,7 @@
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
                     label: 'Temperatura',
-                    data: <?= $data ?>,
+                    data: [11, 19, 5, 7, 4, 5],
                     borderWidth: 1
                 }, {
                     label: 'Humedad',
