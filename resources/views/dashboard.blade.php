@@ -5,7 +5,7 @@
     <h1>Dashboard vista admin</h1>
 
     <?php
-      $x = shell_exec('php C:\users\Personal\Documents\GitHub\Sistemas_Embebidos_Temperatura_Humedad\artisan schedule:run');
+        $x = shell_exec('php C:\users\Personal\Documents\GitHub\Sistemas_Embebidos_Temperatura_Humedad\artisan schedule:run');
       //Echo "$x";
     ?>
 
@@ -76,12 +76,10 @@
     @endif
     @endforeach
 
-
-
     <div class="card">
         <div class="card-body">
             <h3 class="text-center">Zona 1</h3>
-            <canvas id="Zonas"></canvas>
+            <canvas id="zona1"></canvas>
         </div>
     </div>
 
@@ -91,12 +89,11 @@
 
     <script>
         const ctx = document.getElementById('zona1');
-        var datosTemp[];
-        var datoshum[];
+
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Zona 1', 'Zona 2', 'Zona 3', 'Zona 4', 'Zona 5', 'Zona 6'],
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
                     label: 'Temperatura',
                     data: [11, 19, 5, 7, 4, 5],
@@ -116,6 +113,6 @@
             }
         });
     </script>
-      @endsection
+    @endsection
 
 @endsection
