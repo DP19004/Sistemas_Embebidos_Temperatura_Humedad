@@ -37,52 +37,62 @@ class TodosSeeder extends Seeder
         $userviewer->save();
 
         $Zona=Zona::create([
+            'id'=>'1',
             'nombre'=>'p1',
             'editado'=>'0',
         ]);
         $Zona->save();
         $Zona=Zona::create([
+            'id'=>'2',
             'nombre'=>'p2',
             'editado'=>'0',
         ]);
         $Zona->save();
         $Zona=Zona::create([
+            'id'=>'3',
             'nombre'=>'p3',
             'editado'=>'0',
         ]);
         $Zona->save();
         $Zona=Zona::create([
+            'id'=>'4',
             'nombre'=>'p4',
             'editado'=>'0',
         ]);
         $Zona->save();
         $Zona=Zona::create([
+            'id'=>'5',
             'nombre'=>'p5',
             'editado'=>'0',
         ]);
         $Zona->save();
         $Zona=Zona::create([
+            'id'=>'6',
             'nombre'=>'p6',
             'editado'=>'0',
         ]);
         $Zona->save();
         $Zona=Zona::create([
+            'id'=>'7',
             'nombre'=>'p7',
             'editado'=>'0',
         ]);
         $Zona->save();
         $Zona=Zona::create([
+            'id'=>'8',
             'nombre'=>'p8',
             'editado'=>'0',
         ]);
         $Zona->save();
         $Zona=Zona::create([
+            'id'=>'9',
             'nombre'=>'p9',
             'editado'=>'0',
 
         ]);
         $Zona->save();
         $Zona=Zona::create([
+            'id'=>'10',
             'nombre'=>'p10',
             'editado'=>'0',
         ]);
