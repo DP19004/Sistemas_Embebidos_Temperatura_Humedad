@@ -7,6 +7,7 @@ use App\Models\Alarma;
 use App\Models\Cultivo;
 use App\Models\Zona;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Temperatura;
 
 
 
@@ -34,10 +35,18 @@ class NivelController extends Controller
         $cultivos = Cultivo::all();
         $zonas = Zona::all();
 
+        $temps = Temperatura::all();
+
+        $puntos = [];
+        foreach($temps as $temp) {
+            $puntos[] = doubleval($temp['valor']);
+        }
+
         return view('dashboard')
             ->with('alarmas', $alarmas)
             ->with('zonas', $zonas)
-            ->with('cultivos', $cultivos);
+            ->with('cultivos', $cultivos)
+            ->with("data", $puntos);
     }
 
     public function getViewer()
