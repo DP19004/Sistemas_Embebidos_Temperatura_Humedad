@@ -89,6 +89,7 @@
 
     <script>
         const ctx = document.getElementById('zona1');
+        const datax = {!! json_encode($data) !!};
 
         new Chart(ctx, {
             type: 'line',
@@ -96,7 +97,7 @@
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
                     label: 'Temperatura',
-                    data: [11, 19, 5, 7, 4, 5],
+                    data: datax,
                     borderWidth: 1
                 }, {
                     label: 'Humedad',
