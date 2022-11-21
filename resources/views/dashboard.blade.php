@@ -81,7 +81,7 @@
     <div class="card">
         <div class="card-body">
             <h3 class="text-center">Zona 1</h3>
-            <canvas id="zona1"></canvas>
+            <canvas id="Zonas"></canvas>
         </div>
     </div>
 
@@ -91,11 +91,12 @@
 
     <script>
         const ctx = document.getElementById('zona1');
-
+        var datosTemp[];
+        var datoshum[];
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Zona 1', 'Zona 2', 'Zona 3', 'Zona 4', 'Zona 5', 'Zona 6'],
                 datasets: [{
                     label: 'Temperatura',
                     data: [11, 19, 5, 7, 4, 5],
